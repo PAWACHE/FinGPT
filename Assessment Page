@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Financial Health Assessment</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans text-gray-800">
+
+  <!-- Header -->
+  <header class="bg-white shadow-md sticky top-0 z-10">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      <h1 class="text-blue-700 text-2xl font-extrabold tracking-tight">FinanceCheck</h1>
+      <a href="index.html" class="text-blue-600 hover:text-blue-800 font-medium transition">← Back to Home</a>
+    </div>
+  </header>
+
+  <!-- Assessment Section -->
+  <main class="max-w-3xl mx-auto px-6 py-12">
+    <div class="bg-white rounded-xl shadow-lg p-8 space-y-8">
+      <h2 class="text-3xl font-bold text-center text-blue-700">Financial Health Checkup</h2>
+      <p class="text-center text-gray-500">Answer the questions below to evaluate your financial wellness.</p>
+
+      <form id="assessmentForm" class="space-y-10">
+
+        <!-- Saving Habits -->
+        <div>
+          <h3 class="text-lg font-semibold mb-4">Saving Habits</h3>
+          <div class="mb-4">
+            <label class="block mb-2">I regularly save for emergencies and future needs.</label>
+            <select name="save_regularly" class="w-full p-2 border rounded">
+              <option>Strongly Agree</option>
+              <option>Agree</option>
+              <option>Neutral</option>
+              <option>Disagree</option>
+              <option>Strongly Disagree</option>
+            </select>
+          </div>
+
+          <div class="mb-4">
+            <label class="block mb-2">I save a portion of every income I receive.</label>
+            <select name="save_income" class="w-full p-2 border rounded">
+              <option>Strongly Agree</option>
+              <option>Agree</option>
+              <option>Neutral</option>
+              <option>Disagree</option>
+              <option>Strongly Disagree</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Spending Habits -->
+        <div>
+          <h3 class="text-lg font-semibold mb-4">Spending Habits</h3>
+          <div class="mb-4">
+            <label class="block mb-2">I track my monthly spending.</label>
+            <select name="track_spending" class="w-full p-2 border rounded">
+              <option>Strongly Agree</option>
+              <option>Agree</option>
+              <option>Neutral</option>
+              <option>Disagree</option>
+              <option>Strongly Disagree</option>
+            </select>
+          </div>
+
+          <div class="mb-4">
+            <label class="block mb-2">I avoid impulse purchases.</label>
+            <select name="impulse_control" class="w-full p-2 border rounded">
+              <option>Strongly Agree</option>
+              <option>Agree</option>
+              <option>Neutral</option>
+              <option>Disagree</option>
+              <option>Strongly Disagree</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Credit & Debt -->
+        <div>
+          <h3 class="text-lg font-semibold mb-4">Credit & Debt</h3>
+          <div class="mb-4">
+            <label class="block mb-2">I understand how credit scores and interest rates work.</label>
+            <select name="credit_score" class="w-full p-2 border rounded">
+              <option>Strongly Agree</option>
+              <option>Agree</option>
+              <option>Neutral</option>
+              <option>Disagree</option>
+              <option>Strongly Disagree</option>
+            </select>
+          </div>
+
+          <div class="mb-4">
+            <label class="block mb-2">I make timely payments on loans or cards.</label>
+            <select name="pay_on_time" class="w-full p-2 border rounded">
+              <option>Strongly Agree</option>
+              <option>Agree</option>
+              <option>Neutral</option>
+              <option>Disagree</option>
+              <option>Strongly Disagree</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Planning & Investing -->
+        <div>
+          <h3 class="text-lg font-semibold mb-4">Planning & Investing</h3>
+          <div class="mb-4">
+            <label class="block mb-2">I have clear short and long-term financial goals.</label>
+            <select name="financial_goals" class="w-full p-2 border rounded">
+              <option>Strongly Agree</option>
+              <option>Agree</option>
+              <option>Neutral</option>
+              <option>Disagree</option>
+              <option>Strongly Disagree</option>
+            </select>
+          </div>
+
+          <div class="mb-4">
+            <label class="block mb-2">I understand where to invest (FDs, SIPs, Mutual Funds, etc.).</label>
+            <select name="invest_knowledge" class="w-full p-2 border rounded">
+              <option>Strongly Agree</option>
+              <option>Agree</option>
+              <option>Neutral</option>
+              <option>Disagree</option>
+              <option>Strongly Disagree</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="text-center mt-8">
+          <button type="submit" class="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700">
+            See My Financial Score
+          </button>
+        </div>
+      </form>
+
+      <!-- Results Section -->
+      <section id="result" class="mt-8 hidden bg-green-50 border border-green-200 rounded-md p-6 shadow text-center">
+        <h3 class="text-xl font-bold mb-2 text-green-700" id="scoreLabel"></h3>
+        <ul class="text-left text-gray-700 space-y-2" id="recommendationList"></ul>
+      </section>
+    </div>
+  </main>
+
+  <script>
+    document.getElementById('assessmentForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const form = e.target;
+
+      const fields = [
+        'save_regularly',
+        'save_income',
+        'track_spending',
+        'impulse_control',
+        'credit_score',
+        'pay_on_time',
+        'financial_goals',
+        'invest_knowledge'
+      ];
+
+      let score = 0;
+
+      fields.forEach(field => {
+        const value = form[field].value;
+        if (value === 'Strongly Agree') score += 2;
+        else if (value === 'Agree') score += 1;
+      });
+
+      let rating = '';
+      let suggestions = [];
+
+      if (score >= 13) {
+        rating = 'Excellent 💪';
+        suggestions = [
+          'Keep contributing regularly to your savings. <a href="#">[Read More]</a>',
+          'Consider automating your investments. <a href="#">[Explore Options]</a>',
+          'Stay updated on investment trends. <a href="#">[Learn Here]</a>',
+          'Review your credit report yearly. <a href="#">[Credit Tips]</a>'
+        ];
+      } else if (score >= 8) {
+        rating = 'Good 👍';
+        suggestions = [
+          'Track your monthly expenses using a tool. <a href="#">[Try This Tool]</a>',
+          'Set SMART financial goals. <a href="#">[Goal Setting Guide]</a>',
+          'Build an emergency fund. <a href="#">[Emergency Fund Basics]</a>',
+          'Start exploring SIPs and FDs. <a href="#">[Investment 101]</a>',
+          'Improve your credit score with timely payments. <a href="#">[Credit Score Tips]</a>'
+        ];
+      } else {
+        rating = 'Needs Attention 🚨';
+        suggestions = [
+          'Create a monthly budget. <a href="#">[Budget Starter]</a>',
+          'Avoid impulse purchases using the 24-hour rule. <a href="#">[Money Discipline]</a>',
+          'Save at least 5-10% of your income. <a href="#">[Saving Plan]</a>',
+          'Understand debt and interest. <a href="#">[Debt Management]</a>',
+          'Set at least one short and long-term goal. <a href="#">[Financial Planning Basics]</a>'
+        ];
+      }
+
+      document.getElementById('scoreLabel').innerText = `Your Financial Score: ${rating}`;
+
+      const listElement = document.getElementById('recommendationList');
+      listElement.innerHTML = '';
+      suggestions.forEach(suggestion => {
+        const li = document.createElement('li');
+        li.innerHTML = `✅ ${suggestion}`;
+        listElement.appendChild(li);
+      });
+
+      document.getElementById('result').classList.remove('hidden');
+    });
+  </script>
+
+</body>
+</html>
