@@ -1,0 +1,1197 @@
+<!doctype html>
+<html class="no-js  " lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"NRJS-763fce7e1bea316e18e",applicationID:"398129110"};;/*! For license information please see nr-loader-rum-1.293.0.min.js.LICENSE.txt */
+(()=>{var e,t,r={122:(e,t,r)=>{"use strict";r.d(t,{a:()=>i});var n=r(944);function i(e,t){try{if(!e||"object"!=typeof e)return(0,n.R)(3);if(!t||"object"!=typeof t)return(0,n.R)(4);const r=Object.create(Object.getPrototypeOf(t),Object.getOwnPropertyDescriptors(t)),a=0===Object.keys(r).length?e:r;for(let o in a)if(void 0!==e[o])try{if(null===e[o]){r[o]=null;continue}Array.isArray(e[o])&&Array.isArray(t[o])?r[o]=Array.from(new Set([...e[o],...t[o]])):"object"==typeof e[o]&&"object"==typeof t[o]?r[o]=i(e[o],t[o]):r[o]=e[o]}catch(e){r[o]||(0,n.R)(1,e)}return r}catch(e){(0,n.R)(2,e)}}},555:(e,t,r)=>{"use strict";r.d(t,{D:()=>s,f:()=>o});var n=r(384),i=r(122);const a={beacon:n.NT.beacon,errorBeacon:n.NT.errorBeacon,licenseKey:void 0,applicationID:void 0,sa:void 0,queueTime:void 0,applicationTime:void 0,ttGuid:void 0,user:void 0,account:void 0,product:void 0,extra:void 0,jsAttributes:{},userAttributes:void 0,atts:void 0,transactionName:void 0,tNamePlain:void 0};function o(e){try{return!!e.licenseKey&&!!e.errorBeacon&&!!e.applicationID}catch(e){return!1}}const s=e=>(0,i.a)(e,a)},324:(e,t,r)=>{"use strict";r.d(t,{F3:()=>i,Xs:()=>a,xv:()=>n});const n="1.293.0",i="PROD",a="CDN"},154:(e,t,r)=>{"use strict";r.d(t,{OF:()=>c,RI:()=>i,WN:()=>d,bv:()=>a,gm:()=>o,mw:()=>s,sb:()=>u});var n=r(863);const i="undefined"!=typeof window&&!!window.document,a="undefined"!=typeof WorkerGlobalScope&&("undefined"!=typeof self&&self instanceof WorkerGlobalScope&&self.navigator instanceof WorkerNavigator||"undefined"!=typeof globalThis&&globalThis instanceof WorkerGlobalScope&&globalThis.navigator instanceof WorkerNavigator),o=i?window:"undefined"!=typeof WorkerGlobalScope&&("undefined"!=typeof self&&self instanceof WorkerGlobalScope&&self||"undefined"!=typeof globalThis&&globalThis instanceof WorkerGlobalScope&&globalThis),s=Boolean("hidden"===o?.document?.visibilityState),c=/iPad|iPhone|iPod/.test(o.navigator?.userAgent),u=c&&"undefined"==typeof SharedWorker,d=((()=>{const e=o.navigator?.userAgent?.match(/Firefox[/\s](\d+\.\d+)/);Array.isArray(e)&&e.length>=2&&e[1]})(),Date.now()-(0,n.t)())},241:(e,t,r)=>{"use strict";r.d(t,{W:()=>a});var n=r(154);const i="newrelic";function a(e={}){try{n.gm.dispatchEvent(new CustomEvent(i,{detail:e}))}catch(e){}}},687:(e,t,r)=>{"use strict";r.d(t,{Ak:()=>u,Ze:()=>f,x3:()=>d});var n=r(241),i=r(836),a=r(606),o=r(860),s=r(646);const c={};function u(e,t){const r={staged:!1,priority:o.P3[t]||0};l(e),c[e].get(t)||c[e].set(t,r)}function d(e,t){e&&c[e]&&(c[e].get(t)&&c[e].delete(t),p(e,t,!1),c[e].size&&g(e))}function l(e){if(!e)throw new Error("agentIdentifier required");c[e]||(c[e]=new Map)}function f(e="",t="feature",r=!1){if(l(e),!e||!c[e].get(t)||r)return p(e,t);c[e].get(t).staged=!0,g(e)}function g(e){const t=Array.from(c[e]);t.every((([e,t])=>t.staged))&&(t.sort(((e,t)=>e[1].priority-t[1].priority)),t.forEach((([t])=>{c[e].delete(t),p(e,t)})))}function p(e,t,r=!0){const o=e?i.ee.get(e):i.ee,c=a.i.handlers;if(!o.aborted&&o.backlog&&c){if((0,n.W)({agentIdentifier:e,type:"lifecycle",name:"drain",feature:t}),r){const e=o.backlog[t],r=c[t];if(r){for(let t=0;e&&t<e.length;++t)m(e[t],r);Object.entries(r).forEach((([e,t])=>{Object.values(t||{}).forEach((t=>{t[0]?.on&&t[0]?.context()instanceof s.y&&t[0].on(e,t[1])}))}))}}o.isolatedBacklog||delete c[t],o.backlog[t]=null,o.emit("drain-"+t,[])}}function m(e,t){var r=e[1];Object.values(t[r]||{}).forEach((t=>{var r=e[0];if(t[0]===r){var n=t[1],i=e[3],a=e[2];n.apply(i,a)}}))}},836:(e,t,r)=>{"use strict";r.d(t,{P:()=>s,ee:()=>c});var n=r(384),i=r(990),a=r(646),o=r(607);const s="nr@context:".concat(o.W),c=function e(t,r){var n={},o={},d={},l=!1;try{l=16===r.length&&u.initializedAgents?.[r]?.runtime.isolatedBacklog}catch(e){}var f={on:p,addEventListener:p,removeEventListener:function(e,t){var r=n[e];if(!r)return;for(var i=0;i<r.length;i++)r[i]===t&&r.splice(i,1)},emit:function(e,r,n,i,a){!1!==a&&(a=!0);if(c.aborted&&!i)return;t&&a&&t.emit(e,r,n);for(var s=g(n),u=m(e),d=u.length,l=0;l<d;l++)u[l].apply(s,r);var p=v()[o[e]];p&&p.push([f,e,r,s]);return s},get:h,listeners:m,context:g,buffer:function(e,t){const r=v();if(t=t||"feature",f.aborted)return;Object.entries(e||{}).forEach((([e,n])=>{o[n]=t,t in r||(r[t]=[])}))},abort:function(){f._aborted=!0,Object.keys(f.backlog).forEach((e=>{delete f.backlog[e]}))},isBuffering:function(e){return!!v()[o[e]]},debugId:r,backlog:l?{}:t&&"object"==typeof t.backlog?t.backlog:{},isolatedBacklog:l};return Object.defineProperty(f,"aborted",{get:()=>{let e=f._aborted||!1;return e||(t&&(e=t.aborted),e)}}),f;function g(e){return e&&e instanceof a.y?e:e?(0,i.I)(e,s,(()=>new a.y(s))):new a.y(s)}function p(e,t){n[e]=m(e).concat(t)}function m(e){return n[e]||[]}function h(t){return d[t]=d[t]||e(f,t)}function v(){return f.backlog}}(void 0,"globalEE"),u=(0,n.Zm)();u.ee||(u.ee=c)},646:(e,t,r)=>{"use strict";r.d(t,{y:()=>n});class n{constructor(e){this.contextId=e}}},908:(e,t,r)=>{"use strict";r.d(t,{d:()=>n,p:()=>i});var n=r(836).ee.get("handle");function i(e,t,r,i,a){a?(a.buffer([e],i),a.emit(e,t,r)):(n.buffer([e],i),n.emit(e,t,r))}},606:(e,t,r)=>{"use strict";r.d(t,{i:()=>a});var n=r(908);a.on=o;var i=a.handlers={};function a(e,t,r,a){o(a||n.d,i,e,t,r)}function o(e,t,r,i,a){a||(a="feature"),e||(e=n.d);var o=t[a]=t[a]||{};(o[r]=o[r]||[]).push([e,i])}},878:(e,t,r)=>{"use strict";function n(e,t){return{capture:e,passive:!1,signal:t}}function i(e,t,r=!1,i){window.addEventListener(e,t,n(r,i))}function a(e,t,r=!1,i){document.addEventListener(e,t,n(r,i))}r.d(t,{DD:()=>a,jT:()=>n,sp:()=>i})},607:(e,t,r)=>{"use strict";r.d(t,{W:()=>n});const n=(0,r(566).bz)()},566:(e,t,r)=>{"use strict";r.d(t,{LA:()=>s,bz:()=>o});var n=r(154);const i="xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx";function a(e,t){return e?15&e[t]:16*Math.random()|0}function o(){const e=n.gm?.crypto||n.gm?.msCrypto;let t,r=0;return e&&e.getRandomValues&&(t=e.getRandomValues(new Uint8Array(30))),i.split("").map((e=>"x"===e?a(t,r++).toString(16):"y"===e?(3&a()|8).toString(16):e)).join("")}function s(e){const t=n.gm?.crypto||n.gm?.msCrypto;let r,i=0;t&&t.getRandomValues&&(r=t.getRandomValues(new Uint8Array(e)));const o=[];for(var s=0;s<e;s++)o.push(a(r,i++).toString(16));return o.join("")}},614:(e,t,r)=>{"use strict";r.d(t,{BB:()=>o,H3:()=>n,g:()=>u,iL:()=>c,tS:()=>s,uh:()=>i,wk:()=>a});const n="NRBA",i="SESSION",a=144e5,o=18e5,s={STARTED:"session-started",PAUSE:"session-pause",RESET:"session-reset",RESUME:"session-resume",UPDATE:"session-update"},c={SAME_TAB:"same-tab",CROSS_TAB:"cross-tab"},u={OFF:0,FULL:1,ERROR:2}},863:(e,t,r)=>{"use strict";function n(){return Math.floor(performance.now())}r.d(t,{t:()=>n})},944:(e,t,r)=>{"use strict";r.d(t,{R:()=>i});var n=r(241);function i(e,t){"function"==typeof console.debug&&(console.debug("New Relic Warning: https://github.com/newrelic/newrelic-browser-agent/blob/main/docs/warning-codes.md#".concat(e),t),(0,n.W)({agentIdentifier:null,drained:null,type:"data",name:"warn",feature:"warn",data:{code:e,secondary:t}}))}},701:(e,t,r)=>{"use strict";r.d(t,{B:()=>a,t:()=>o});var n=r(241);const i=new Set,a={};function o(e,t){const r=t.agentIdentifier;a[r]??={},e&&"object"==typeof e&&(i.has(r)||(t.ee.emit("rumresp",[e]),a[r]=e,i.add(r),(0,n.W)({agentIdentifier:r,loaded:!0,drained:!0,type:"lifecycle",name:"load",feature:void 0,data:e})))}},990:(e,t,r)=>{"use strict";r.d(t,{I:()=>i});var n=Object.prototype.hasOwnProperty;function i(e,t,r){if(n.call(e,t))return e[t];var i=r();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:i,writable:!0,enumerable:!1}),i}catch(e){}return e[t]=i,i}},389:(e,t,r)=>{"use strict";function n(e,t=500,r={}){const n=r?.leading||!1;let i;return(...r)=>{n&&void 0===i&&(e.apply(this,r),i=setTimeout((()=>{i=clearTimeout(i)}),t)),n||(clearTimeout(i),i=setTimeout((()=>{e.apply(this,r)}),t))}}function i(e){let t=!1;return(...r)=>{t||(t=!0,e.apply(this,r))}}r.d(t,{J:()=>i,s:()=>n})},289:(e,t,r)=>{"use strict";r.d(t,{GG:()=>a,Qr:()=>s,sB:()=>o});var n=r(878);function i(){return"undefined"==typeof document||"complete"===document.readyState}function a(e,t){if(i())return e();(0,n.sp)("load",e,t)}function o(e){if(i())return e();(0,n.DD)("DOMContentLoaded",e)}function s(e){if(i())return e();(0,n.sp)("popstate",e)}},384:(e,t,r)=>{"use strict";r.d(t,{NT:()=>a,US:()=>u,Zm:()=>o,bQ:()=>c,dV:()=>s,pV:()=>d});var n=r(154),i=r(863);const a={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net"};function o(){return n.gm.NREUM||(n.gm.NREUM={}),void 0===n.gm.newrelic&&(n.gm.newrelic=n.gm.NREUM),n.gm.NREUM}function s(){let e=o();return e.o||(e.o={ST:n.gm.setTimeout,SI:n.gm.setImmediate,CT:n.gm.clearTimeout,XHR:n.gm.XMLHttpRequest,REQ:n.gm.Request,EV:n.gm.Event,PR:n.gm.Promise,MO:n.gm.MutationObserver,FETCH:n.gm.fetch,WS:n.gm.WebSocket}),e}function c(e,t){let r=o();r.initializedAgents??={},t.initializedAt={ms:(0,i.t)(),date:new Date},r.initializedAgents[e]=t}function u(e,t){o()[e]=t}function d(){return function(){let e=o();const t=e.info||{};e.info={beacon:a.beacon,errorBeacon:a.errorBeacon,...t}}(),function(){let e=o();const t=e.init||{};e.init={...t}}(),s(),function(){let e=o();const t=e.loader_config||{};e.loader_config={...t}}(),o()}},843:(e,t,r)=>{"use strict";r.d(t,{u:()=>i});var n=r(878);function i(e,t=!1,r,i){(0,n.DD)("visibilitychange",(function(){if(t)return void("hidden"===document.visibilityState&&e());e(document.visibilityState)}),r,i)}},773:(e,t,r)=>{"use strict";r.d(t,{z_:()=>a,XG:()=>s,TZ:()=>n,rs:()=>i,xV:()=>o});r(154),r(566),r(384);const n=r(860).K7.metrics,i="sm",a="cm",o="storeSupportabilityMetrics",s="storeEventMetrics"},630:(e,t,r)=>{"use strict";r.d(t,{T:()=>n});const n=r(860).K7.pageViewEvent},782:(e,t,r)=>{"use strict";r.d(t,{T:()=>n});const n=r(860).K7.pageViewTiming},234:(e,t,r)=>{"use strict";r.d(t,{W:()=>a});var n=r(836),i=r(687);class a{constructor(e,t){this.agentIdentifier=e,this.ee=n.ee.get(e),this.featureName=t,this.blocked=!1}deregisterDrain(){(0,i.x3)(this.agentIdentifier,this.featureName)}}},741:(e,t,r)=>{"use strict";r.d(t,{W:()=>a});var n=r(944),i=r(261);class a{#e(e,...t){if(this[e]!==a.prototype[e])return this[e](...t);(0,n.R)(35,e)}addPageAction(e,t){return this.#e(i.hG,e,t)}register(e){return this.#e(i.eY,e)}recordCustomEvent(e,t){return this.#e(i.fF,e,t)}setPageViewName(e,t){return this.#e(i.Fw,e,t)}setCustomAttribute(e,t,r){return this.#e(i.cD,e,t,r)}noticeError(e,t){return this.#e(i.o5,e,t)}setUserId(e){return this.#e(i.Dl,e)}setApplicationVersion(e){return this.#e(i.nb,e)}setErrorHandler(e){return this.#e(i.bt,e)}addRelease(e,t){return this.#e(i.k6,e,t)}log(e,t){return this.#e(i.$9,e,t)}start(){return this.#e(i.d3)}finished(e){return this.#e(i.BL,e)}recordReplay(){return this.#e(i.CH)}pauseReplay(){return this.#e(i.Tb)}addToTrace(e){return this.#e(i.U2,e)}setCurrentRouteName(e){return this.#e(i.PA,e)}interaction(){return this.#e(i.dT)}wrapLogger(e,t,r){return this.#e(i.Wb,e,t,r)}measure(e,t){return this.#e(i.V1,e,t)}}},261:(e,t,r)=>{"use strict";r.d(t,{$9:()=>u,BL:()=>s,CH:()=>g,Dl:()=>_,Fw:()=>y,PA:()=>h,Pl:()=>n,Tb:()=>l,U2:()=>a,V1:()=>k,Wb:()=>x,bt:()=>b,cD:()=>v,d3:()=>w,dT:()=>c,eY:()=>p,fF:()=>f,hG:()=>i,k6:()=>o,nb:()=>m,o5:()=>d});const n="api-",i="addPageAction",a="addToTrace",o="addRelease",s="finished",c="interaction",u="log",d="noticeError",l="pauseReplay",f="recordCustomEvent",g="recordReplay",p="register",m="setApplicationVersion",h="setCurrentRouteName",v="setCustomAttribute",b="setErrorHandler",y="setPageViewName",_="setUserId",w="start",x="wrapLogger",k="measure"},163:(e,t,r)=>{"use strict";r.d(t,{j:()=>E});var n=r(384),i=r(741);var a=r(555);r(860).K7.genericEvents;const o="experimental.marks",s="experimental.measures",c="experimental.resources",u=e=>{if(!e||"string"!=typeof e)return!1;try{document.createDocumentFragment().querySelector(e)}catch{return!1}return!0};var d=r(614),l=r(944),f=r(122);const g="[data-nr-mask]",p=e=>(0,f.a)(e,(()=>{const e={feature_flags:[],experimental:{marks:!1,measures:!1,resources:!1},mask_selector:"*",block_selector:"[data-nr-block]",mask_input_options:{color:!1,date:!1,"datetime-local":!1,email:!1,month:!1,number:!1,range:!1,search:!1,tel:!1,text:!1,time:!1,url:!1,week:!1,textarea:!1,select:!1,password:!0}};return{ajax:{deny_list:void 0,block_internal:!0,enabled:!0,autoStart:!0},api:{allow_registered_children:!0,duplicate_registered_data:!1},distributed_tracing:{enabled:void 0,exclude_newrelic_header:void 0,cors_use_newrelic_header:void 0,cors_use_tracecontext_headers:void 0,allowed_origins:void 0},get feature_flags(){return e.feature_flags},set feature_flags(t){e.feature_flags=t},generic_events:{enabled:!0,autoStart:!0},harvest:{interval:30},jserrors:{enabled:!0,autoStart:!0},logging:{enabled:!0,autoStart:!0},metrics:{enabled:!0,autoStart:!0},obfuscate:void 0,page_action:{enabled:!0},page_view_event:{enabled:!0,autoStart:!0},page_view_timing:{enabled:!0,autoStart:!0},performance:{get capture_marks(){return e.feature_flags.includes(o)||e.experimental.marks},set capture_marks(t){e.experimental.marks=t},get capture_measures(){return e.feature_flags.includes(s)||e.experimental.measures},set capture_measures(t){e.experimental.measures=t},capture_detail:!0,resources:{get enabled(){return e.feature_flags.includes(c)||e.experimental.resources},set enabled(t){e.experimental.resources=t},asset_types:[],first_party_domains:[],ignore_newrelic:!0}},privacy:{cookies_enabled:!0},proxy:{assets:void 0,beacon:void 0},session:{expiresMs:d.wk,inactiveMs:d.BB},session_replay:{autoStart:!0,enabled:!1,preload:!1,sampling_rate:10,error_sampling_rate:100,collect_fonts:!1,inline_images:!1,fix_stylesheets:!0,mask_all_inputs:!0,get mask_text_selector(){return e.mask_selector},set mask_text_selector(t){u(t)?e.mask_selector="".concat(t,",").concat(g):""===t||null===t?e.mask_selector=g:(0,l.R)(5,t)},get block_class(){return"nr-block"},get ignore_class(){return"nr-ignore"},get mask_text_class(){return"nr-mask"},get block_selector(){return e.block_selector},set block_selector(t){u(t)?e.block_selector+=",".concat(t):""!==t&&(0,l.R)(6,t)},get mask_input_options(){return e.mask_input_options},set mask_input_options(t){t&&"object"==typeof t?e.mask_input_options={...t,password:!0}:(0,l.R)(7,t)}},session_trace:{enabled:!0,autoStart:!0},soft_navigations:{enabled:!0,autoStart:!0},spa:{enabled:!0,autoStart:!0},ssl:void 0,user_actions:{enabled:!0,elementAttributes:["id","className","tagName","type"]}}})());var m=r(154),h=r(324);let v=0;const b={buildEnv:h.F3,distMethod:h.Xs,version:h.xv,originTime:m.WN},y={appMetadata:{},customTransaction:void 0,denyList:void 0,disabled:!1,entityManager:void 0,harvester:void 0,isolatedBacklog:!1,isRecording:!1,loaderType:void 0,maxBytes:3e4,obfuscator:void 0,onerror:void 0,ptid:void 0,releaseIds:{},session:void 0,timeKeeper:void 0,get harvestCount(){return++v}},_=e=>{const t=(0,f.a)(e,y),r=Object.keys(b).reduce(((e,t)=>(e[t]={value:b[t],writable:!1,configurable:!0,enumerable:!0},e)),{});return Object.defineProperties(t,r)};var w=r(701);const x=e=>{const t=e.startsWith("http");e+="/",r.p=t?e:"https://"+e};var k=r(836),A=r(241);const S={accountID:void 0,trustKey:void 0,agentID:void 0,licenseKey:void 0,applicationID:void 0,xpid:void 0},T=e=>(0,f.a)(e,S),R=new Set;function E(e,t={},r,o){let{init:s,info:c,loader_config:u,runtime:d={},exposed:l=!0}=t;if(!c){const e=(0,n.pV)();s=e.init,c=e.info,u=e.loader_config}e.init=p(s||{}),e.loader_config=T(u||{}),c.jsAttributes??={},m.bv&&(c.jsAttributes.isWorker=!0),e.info=(0,a.D)(c);const f=e.init,g=[c.beacon,c.errorBeacon];R.has(e.agentIdentifier)||(f.proxy.assets&&(x(f.proxy.assets),g.push(f.proxy.assets)),f.proxy.beacon&&g.push(f.proxy.beacon),function(e){const t=(0,n.pV)();Object.getOwnPropertyNames(i.W.prototype).forEach((r=>{const n=i.W.prototype[r];if("function"!=typeof n||"constructor"===n)return;let a=t[r];e[r]&&!1!==e.exposed&&"micro-agent"!==e.runtime?.loaderType&&(t[r]=(...t)=>{const n=e[r](...t);return a?a(...t):n})}))}(e),(0,n.US)("activatedFeatures",w.B),e.runSoftNavOverSpa&&=!0===f.soft_navigations.enabled&&f.feature_flags.includes("soft_nav")),d.denyList=[...f.ajax.deny_list||[],...f.ajax.block_internal?g:[]],d.ptid=e.agentIdentifier,d.loaderType=r,e.runtime=_(d),R.has(e.agentIdentifier)||(e.ee=k.ee.get(e.agentIdentifier),e.exposed=l,(0,A.W)({agentIdentifier:e.agentIdentifier,drained:!!w.B?.[e.agentIdentifier],type:"lifecycle",name:"initialize",feature:void 0,data:e.config})),R.add(e.agentIdentifier)}},374:(e,t,r)=>{r.nc=(()=>{try{return document?.currentScript?.nonce}catch(e){}return""})()},860:(e,t,r)=>{"use strict";r.d(t,{$J:()=>d,K7:()=>c,P3:()=>u,XX:()=>i,Yy:()=>s,df:()=>a,qY:()=>n,v4:()=>o});const n="events",i="jserrors",a="browser/blobs",o="rum",s="browser/logs",c={ajax:"ajax",genericEvents:"generic_events",jserrors:i,logging:"logging",metrics:"metrics",pageAction:"page_action",pageViewEvent:"page_view_event",pageViewTiming:"page_view_timing",sessionReplay:"session_replay",sessionTrace:"session_trace",softNav:"soft_navigations",spa:"spa"},u={[c.pageViewEvent]:1,[c.pageViewTiming]:2,[c.metrics]:3,[c.jserrors]:4,[c.spa]:5,[c.ajax]:6,[c.sessionTrace]:7,[c.softNav]:8,[c.sessionReplay]:9,[c.logging]:10,[c.genericEvents]:11},d={[c.pageViewEvent]:o,[c.pageViewTiming]:n,[c.ajax]:n,[c.spa]:n,[c.softNav]:n,[c.metrics]:i,[c.jserrors]:i,[c.sessionTrace]:a,[c.sessionReplay]:a,[c.logging]:s,[c.genericEvents]:"ins"}}},n={};function i(e){var t=n[e];if(void 0!==t)return t.exports;var a=n[e]={exports:{}};return r[e](a,a.exports,i),a.exports}i.m=r,i.d=(e,t)=>{for(var r in t)i.o(t,r)&&!i.o(e,r)&&Object.defineProperty(e,r,{enumerable:!0,get:t[r]})},i.f={},i.e=e=>Promise.all(Object.keys(i.f).reduce(((t,r)=>(i.f[r](e,t),t)),[])),i.u=e=>"nr-rum-1.293.0.min.js",i.o=(e,t)=>Object.prototype.hasOwnProperty.call(e,t),e={},t="NRBA-1.293.0.PROD:",i.l=(r,n,a,o)=>{if(e[r])e[r].push(n);else{var s,c;if(void 0!==a)for(var u=document.getElementsByTagName("script"),d=0;d<u.length;d++){var l=u[d];if(l.getAttribute("src")==r||l.getAttribute("data-webpack")==t+a){s=l;break}}if(!s){c=!0;var f={296:"sha512-M1viQxU/Sd10c/wA0iJyMGykq7mUO4/cNh2pUlWVWSRdp2RUo2Lmen9N19KuzHKjUln7vOC7HGbkzvGvRT/yQg=="};(s=document.createElement("script")).charset="utf-8",s.timeout=120,i.nc&&s.setAttribute("nonce",i.nc),s.setAttribute("data-webpack",t+a),s.src=r,0!==s.src.indexOf(window.location.origin+"/")&&(s.crossOrigin="anonymous"),f[o]&&(s.integrity=f[o])}e[r]=[n];var g=(t,n)=>{s.onerror=s.onload=null,clearTimeout(p);var i=e[r];if(delete e[r],s.parentNode&&s.parentNode.removeChild(s),i&&i.forEach((e=>e(n))),t)return t(n)},p=setTimeout(g.bind(null,void 0,{type:"timeout",target:s}),12e4);s.onerror=g.bind(null,s.onerror),s.onload=g.bind(null,s.onload),c&&document.head.appendChild(s)}},i.r=e=>{"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},i.p="https://js-agent.newrelic.com/",(()=>{var e={374:0,840:0};i.f.j=(t,r)=>{var n=i.o(e,t)?e[t]:void 0;if(0!==n)if(n)r.push(n[2]);else{var a=new Promise(((r,i)=>n=e[t]=[r,i]));r.push(n[2]=a);var o=i.p+i.u(t),s=new Error;i.l(o,(r=>{if(i.o(e,t)&&(0!==(n=e[t])&&(e[t]=void 0),n)){var a=r&&("load"===r.type?"missing":r.type),o=r&&r.target&&r.target.src;s.message="Loading chunk "+t+" failed.\n("+a+": "+o+")",s.name="ChunkLoadError",s.type=a,s.request=o,n[1](s)}}),"chunk-"+t,t)}};var t=(t,r)=>{var n,a,[o,s,c]=r,u=0;if(o.some((t=>0!==e[t]))){for(n in s)i.o(s,n)&&(i.m[n]=s[n]);if(c)c(i)}for(t&&t(r);u<o.length;u++)a=o[u],i.o(e,a)&&e[a]&&e[a][0](),e[a]=0},r=self["webpackChunk:NRBA-1.293.0.PROD"]=self["webpackChunk:NRBA-1.293.0.PROD"]||[];r.forEach(t.bind(null,0)),r.push=t.bind(null,r.push.bind(r))})(),(()=>{"use strict";i(374);var e=i(566),t=i(741);class r extends t.W{agentIdentifier=(0,e.LA)(16)}var n=i(860);const a=Object.values(n.K7);var o=i(163);var s=i(908),c=i(863),u=i(261),d=i(241),l=i(944),f=i(701),g=i(773);function p(e,t,i,a){const o=a||i;!o||o[e]&&o[e]!==r.prototype[e]||(o[e]=function(){(0,s.p)(g.xV,["API/"+e+"/called"],void 0,n.K7.metrics,i.ee),(0,d.W)({agentIdentifier:i.agentIdentifier,drained:!!f.B?.[i.agentIdentifier],type:"data",name:"api",feature:u.Pl+e,data:{}});try{return t.apply(this,arguments)}catch(e){(0,l.R)(23,e)}})}function m(e,t,r,n,i){const a=e.info;null===r?delete a.jsAttributes[t]:a.jsAttributes[t]=r,(i||null===r)&&(0,s.p)(u.Pl+n,[(0,c.t)(),t,r],void 0,"session",e.ee)}var h=i(687),v=i(234),b=i(289),y=i(154),_=i(384);const w=e=>y.RI&&!0===e?.privacy.cookies_enabled;function x(e){return!!(0,_.dV)().o.MO&&w(e)&&!0===e?.session_trace.enabled}var k=i(389);class A extends v.W{constructor(e,t){super(e.agentIdentifier,t),this.abortHandler=void 0,this.featAggregate=void 0,this.onAggregateImported=void 0,this.deferred=Promise.resolve(),!1===e.init[this.featureName].autoStart?this.deferred=new Promise(((t,r)=>{this.ee.on("manual-start-all",(0,k.J)((()=>{(0,h.Ak)(e.agentIdentifier,this.featureName),t()})))})):(0,h.Ak)(e.agentIdentifier,t)}importAggregator(e,t,r={}){if(this.featAggregate)return;let a;this.onAggregateImported=new Promise((e=>{a=e}));const o=async()=>{let o;await this.deferred;try{if(w(e.init)){const{setupAgentSession:t}=await i.e(296).then(i.bind(i,663));o=t(e)}}catch(e){(0,l.R)(20,e),this.ee.emit("internal-error",[e]),this.featureName===n.K7.sessionReplay&&this.abortHandler?.()}try{if(!this.#t(this.featureName,o,e.init))return(0,h.Ze)(this.agentIdentifier,this.featureName),void a(!1);const{Aggregate:n}=await t();this.featAggregate=new n(e,r),e.runtime.harvester.initializedAggregates.push(this.featAggregate),a(!0)}catch(e){(0,l.R)(34,e),this.abortHandler?.(),(0,h.Ze)(this.agentIdentifier,this.featureName,!0),a(!1),this.ee&&this.ee.abort()}};y.RI?(0,b.GG)((()=>o()),!0):o()}#t(e,t,r){switch(e){case n.K7.sessionReplay:return x(r)&&!!t;case n.K7.sessionTrace:return!!t;default:return!0}}}var S=i(630),T=i(614);class R extends A{static featureName=S.T;constructor(e){var t;super(e,S.T),this.setupInspectionEvents(e.agentIdentifier),t=e,p(u.Fw,(function(e,r){"string"==typeof e&&("/"!==e.charAt(0)&&(e="/"+e),t.runtime.customTransaction=(r||"http://custom.transaction")+e,(0,s.p)(u.Pl+u.Fw,[(0,c.t)()],void 0,void 0,t.ee))}),t),this.ee.on("api-send-rum",((e,t)=>(0,s.p)("send-rum",[e,t],void 0,this.featureName,this.ee))),this.importAggregator(e,(()=>i.e(296).then(i.bind(i,108))))}setupInspectionEvents(e){const t=(t,r)=>{t&&(0,d.W)({agentIdentifier:e,timeStamp:t.timeStamp,loaded:"complete"===t.target.readyState,type:"window",name:r,data:t.target.location+""})};(0,b.sB)((e=>{t(e,"DOMContentLoaded")})),(0,b.GG)((e=>{t(e,"load")})),(0,b.Qr)((e=>{t(e,"navigate")})),this.ee.on(T.tS.UPDATE,((t,r)=>{(0,d.W)({agentIdentifier:e,type:"lifecycle",name:"session",data:r})}))}}var E=i(843),N=i(878),j=i(782);class I extends A{static featureName=j.T;constructor(e){super(e,j.T),y.RI&&((0,E.u)((()=>(0,s.p)("docHidden",[(0,c.t)()],void 0,j.T,this.ee)),!0),(0,N.sp)("pagehide",(()=>(0,s.p)("winPagehide",[(0,c.t)()],void 0,j.T,this.ee))),this.importAggregator(e,(()=>i.e(296).then(i.bind(i,350)))))}}class O extends A{static featureName=g.TZ;constructor(e){super(e,g.TZ),y.RI&&document.addEventListener("securitypolicyviolation",(e=>{(0,s.p)(g.xV,["Generic/CSPViolation/Detected"],void 0,this.featureName,this.ee)})),this.importAggregator(e,(()=>i.e(296).then(i.bind(i,373))))}}new class extends r{constructor(e){var t;(super(),y.gm)?(this.features={},(0,_.bQ)(this.agentIdentifier,this),this.desiredFeatures=new Set(e.features||[]),this.desiredFeatures.add(R),this.runSoftNavOverSpa=[...this.desiredFeatures].some((e=>e.featureName===n.K7.softNav)),(0,o.j)(this,e,e.loaderType||"agent"),t=this,p(u.cD,(function(e,r,n=!1){if("string"==typeof e){if(["string","number","boolean"].includes(typeof r)||null===r)return m(t,e,r,u.cD,n);(0,l.R)(40,typeof r)}else(0,l.R)(39,typeof e)}),t),function(e){p(u.Dl,(function(t){if("string"==typeof t||null===t)return m(e,"enduser.id",t,u.Dl,!0);(0,l.R)(41,typeof t)}),e)}(this),function(e){p(u.nb,(function(t){if("string"==typeof t||null===t)return m(e,"application.version",t,u.nb,!1);(0,l.R)(42,typeof t)}),e)}(this),function(e){p(u.d3,(function(){e.ee.emit("manual-start-all")}),e)}(this),this.run()):(0,l.R)(21)}get config(){return{info:this.info,init:this.init,loader_config:this.loader_config,runtime:this.runtime}}get api(){return this}run(){try{const e=function(e){const t={};return a.forEach((r=>{t[r]=!!e[r]?.enabled})),t}(this.init),t=[...this.desiredFeatures];t.sort(((e,t)=>n.P3[e.featureName]-n.P3[t.featureName])),t.forEach((t=>{if(!e[t.featureName]&&t.featureName!==n.K7.pageViewEvent)return;if(this.runSoftNavOverSpa&&t.featureName===n.K7.spa)return;if(!this.runSoftNavOverSpa&&t.featureName===n.K7.softNav)return;const r=function(e){switch(e){case n.K7.ajax:return[n.K7.jserrors];case n.K7.sessionTrace:return[n.K7.ajax,n.K7.pageViewEvent];case n.K7.sessionReplay:return[n.K7.sessionTrace];case n.K7.pageViewTiming:return[n.K7.pageViewEvent];default:return[]}}(t.featureName).filter((e=>!(e in this.features)));r.length>0&&(0,l.R)(36,{targetFeature:t.featureName,missingDependencies:r}),this.features[t.featureName]=new t(this)}))}catch(e){(0,l.R)(22,e);for(const e in this.features)this.features[e].abortHandler?.();const t=(0,_.Zm)();delete t.initializedAgents[this.agentIdentifier]?.features,delete this.sharedAggregator;return t.ee.get(this.agentIdentifier).abort(),!1}}}({features:[R,I,O],loaderType:"lite"})})()})();</script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" size="32x32" href="/favicon.ico">
+        <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+<link rel="alternate" href="https://handsonbanking.org/resources/all-about-spending/" hreflang="en" />
+<link rel="alternate" href="https://handsonbanking.org/es/resources/todo-sobre-gasto/" hreflang="es" />
+	<title>All About Spending - Hands on Banking - Financial Education</title>
+	<meta name="description" content="Spending plans. Learn more about creating a spending plan and changing your spending habits. Hands on Banking financial education." />
+	<link rel="canonical" href="https://handsonbanking.org/resources/all-about-spending/" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:locale:alternate" content="es_ES" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="All About Spending - Hands on Banking - Financial Education" />
+	<meta property="og:description" content="Spending plans. Learn more about creating a spending plan and changing your spending habits. Hands on Banking financial education." />
+	<meta property="og:url" content="https://handsonbanking.org/resources/all-about-spending/" />
+	<meta property="og:site_name" content="Hands on Banking" />
+	<meta property="article:modified_time" content="2025-06-20T21:25:13+00:00" />
+	<meta property="og:image" content="https://handsonbanking.org/wp-content/uploads/2020/07/ChecklistIcon4_small.png" />
+	<meta property="og:image:width" content="225" />
+	<meta property="og:image:height" content="223" />
+	<meta property="og:image:type" content="image/png" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:label1" content="Est. reading time" />
+	<meta name="twitter:data1" content="13 minutes" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://handsonbanking.org/resources/all-about-spending/","url":"https://handsonbanking.org/resources/all-about-spending/","name":"All About Spending - Hands on Banking - Financial Education","isPartOf":{"@id":"https://handsonbanking.org/#website"},"primaryImageOfPage":{"@id":"https://handsonbanking.org/resources/all-about-spending/#primaryimage"},"image":{"@id":"https://handsonbanking.org/resources/all-about-spending/#primaryimage"},"thumbnailUrl":"https://handsonbanking.org/wp-content/uploads/2020/07/ChecklistIcon4_small.png","datePublished":"2020-05-26T03:17:08+00:00","dateModified":"2025-06-20T21:25:13+00:00","description":"Spending plans. Learn more about creating a spending plan and changing your spending habits. Hands on Banking financial education.","breadcrumb":{"@id":"https://handsonbanking.org/resources/all-about-spending/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://handsonbanking.org/resources/all-about-spending/"]}]},{"@type":"ImageObject","inLanguage":"en-US","@id":"https://handsonbanking.org/resources/all-about-spending/#primaryimage","url":"https://handsonbanking.org/wp-content/uploads/2020/07/ChecklistIcon4_small.png","contentUrl":"https://handsonbanking.org/wp-content/uploads/2020/07/ChecklistIcon4_small.png","width":225,"height":223,"caption":"checklist icon"},{"@type":"BreadcrumbList","@id":"https://handsonbanking.org/resources/all-about-spending/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://handsonbanking.org/"},{"@type":"ListItem","position":2,"name":"Resources","item":"https://handsonbanking.org/resources/"},{"@type":"ListItem","position":3,"name":"All About Spending"}]},{"@type":"WebSite","@id":"https://handsonbanking.org/#website","url":"https://handsonbanking.org/","name":"Hands on Banking","description":"Hands on Banking Money Skills you need for life","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://handsonbanking.org/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"en-US"}]}</script>
+<link rel='dns-prefetch' href='//handsonbanking.org' />
+<script type="text/javascript">
+/* <![CDATA[ */
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/handsonbanking.org\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.4.3"}};
+/*! This file is auto-generated */
+!function(i,n){var o,s,e;function c(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function p(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data),r=(e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0),new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data));return t.every(function(e,t){return e===r[t]})}function u(e,t,n){switch(t){case"flag":return n(e,"\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!n(e,"\ud83c\uddfa\ud83c\uddf3","\ud83c\uddfa\u200b\ud83c\uddf3")&&!n(e,"\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!n(e,"\ud83e\udef1\ud83c\udffb\u200d\ud83e\udef2\ud83c\udfff","\ud83e\udef1\ud83c\udffb\u200b\ud83e\udef2\ud83c\udfff")}return!1}function f(e,t,n){var r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):i.createElement("canvas"),a=r.getContext("2d",{willReadFrequently:!0}),o=(a.textBaseline="top",a.font="600 32px Arial",{});return e.forEach(function(e){o[e]=t(a,e,n)}),o}function t(e){var t=i.createElement("script");t.src=e,t.defer=!0,i.head.appendChild(t)}"undefined"!=typeof Promise&&(o="wpEmojiSettingsSupports",s=["flag","emoji"],n.supports={everything:!0,everythingExceptFlag:!0},e=new Promise(function(e){i.addEventListener("DOMContentLoaded",e,{once:!0})}),new Promise(function(t){var n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(s),u.toString(),p.toString()].join(",")+"));",r=new Blob([e],{type:"text/javascript"}),a=new Worker(URL.createObjectURL(r),{name:"wpTestEmojiSupports"});return void(a.onmessage=function(e){c(n=e.data),a.terminate(),t(n)})}catch(e){}c(n=f(s,u,p))}t(n)}).then(function(e){for(var t in e)n.supports[t]=e[t],n.supports.everything=n.supports.everything&&n.supports[t],"flag"!==t&&(n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&n.supports[t]);n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&!n.supports.flag,n.DOMReady=!1,n.readyCallback=function(){n.DOMReady=!0}}).then(function(){return e}).then(function(){var e;n.supports.everything||(n.readyCallback(),(e=n.source||{}).concatemoji?t(e.concatemoji):e.wpemoji&&e.twemoji&&(t(e.twemoji),t(e.wpemoji)))}))}((window,document),window._wpemojiSettings);
+/* ]]> */
+</script>
+<style id='wp-emoji-styles-inline-css' type='text/css'>
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+</style>
+<link rel='stylesheet' id='wp-block-library-css' href='https://handsonbanking.org/wp-includes/css/dist/block-library/style.min.css?ver=6.4.3' type='text/css' media='all' />
+<style id='wp-block-library-theme-inline-css' type='text/css'>
+.wp-block-audio figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-audio figcaption{color:hsla(0,0%,100%,.65)}.wp-block-audio{margin:0 0 1em}.wp-block-code{border:1px solid #ccc;border-radius:4px;font-family:Menlo,Consolas,monaco,monospace;padding:.8em 1em}.wp-block-embed figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-embed figcaption{color:hsla(0,0%,100%,.65)}.wp-block-embed{margin:0 0 1em}.blocks-gallery-caption{color:#555;font-size:13px;text-align:center}.is-dark-theme .blocks-gallery-caption{color:hsla(0,0%,100%,.65)}.wp-block-image figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-image figcaption{color:hsla(0,0%,100%,.65)}.wp-block-image{margin:0 0 1em}.wp-block-pullquote{border-bottom:4px solid;border-top:4px solid;color:currentColor;margin-bottom:1.75em}.wp-block-pullquote cite,.wp-block-pullquote footer,.wp-block-pullquote__citation{color:currentColor;font-size:.8125em;font-style:normal;text-transform:uppercase}.wp-block-quote{border-left:.25em solid;margin:0 0 1.75em;padding-left:1em}.wp-block-quote cite,.wp-block-quote footer{color:currentColor;font-size:.8125em;font-style:normal;position:relative}.wp-block-quote.has-text-align-right{border-left:none;border-right:.25em solid;padding-left:0;padding-right:1em}.wp-block-quote.has-text-align-center{border:none;padding-left:0}.wp-block-quote.is-large,.wp-block-quote.is-style-large,.wp-block-quote.is-style-plain{border:none}.wp-block-search .wp-block-search__label{font-weight:700}.wp-block-search__button{border:1px solid #ccc;padding:.375em .625em}:where(.wp-block-group.has-background){padding:1.25em 2.375em}.wp-block-separator.has-css-opacity{opacity:.4}.wp-block-separator{border:none;border-bottom:2px solid;margin-left:auto;margin-right:auto}.wp-block-separator.has-alpha-channel-opacity{opacity:1}.wp-block-separator:not(.is-style-wide):not(.is-style-dots){width:100px}.wp-block-separator.has-background:not(.is-style-dots){border-bottom:none;height:1px}.wp-block-separator.has-background:not(.is-style-wide):not(.is-style-dots){height:2px}.wp-block-table{margin:0 0 1em}.wp-block-table td,.wp-block-table th{word-break:normal}.wp-block-table figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-table figcaption{color:hsla(0,0%,100%,.65)}.wp-block-video figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-video figcaption{color:hsla(0,0%,100%,.65)}.wp-block-video{margin:0 0 1em}.wp-block-template-part.has-background{margin-bottom:0;margin-top:0;padding:1.25em 2.375em}
+</style>
+<style id='safe-svg-svg-icon-style-inline-css' type='text/css'>
+.safe-svg-cover{text-align:center}.safe-svg-cover .safe-svg-inside{display:inline-block;max-width:100%}.safe-svg-cover svg{height:100%;max-height:100%;max-width:100%;width:100%}
+</style>
+<link rel='stylesheet' id='editorskit-frontend-css' href='https://handsonbanking.org/wp-content/plugins/block-options/build/style.build.css?ver=new' type='text/css' media='all' />
+<style id='classic-theme-styles-inline-css' type='text/css'>
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+</style>
+<style id='global-styles-inline-css' type='text/css'>
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--color--kb-palette-1: #5199ad;--wp--preset--color--kb-palette-2: #f58433;--wp--preset--color--kb-palette-3: #ccbe3c;--wp--preset--color--kb-palette-4: #5e652b;--wp--preset--color--kb-palette-5: #bf202f;--wp--preset--color--kb-palette-6: #b2b4b9;--wp--preset--color--kb-palette-7: #dadbbf;--wp--preset--color--kb-palette-8: #f2e2bd;--wp--preset--color--kb-palette-9: #bfcec2;--wp--preset--color--kb-palette-10: #c2deea;--wp--preset--color--kb-palette-11: #44464a;--wp--preset--color--kb-palette-12: #345c6f;--wp--preset--color--kb-palette-13: #737373;--wp--preset--color--kb-palette-14: #a04d10;--wp--preset--color--kb-palette-15: #a61c2a;--wp--preset--color--kb-palette-16: #ffffff;--wp--preset--color--kb-palette-17: #000000;--wp--preset--color--kb-palette-172: #f9f9f9;--wp--preset--color--kb-palette-18: #888888;--wp--preset--color--kb-palette-19: #888888;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--font-size--normal: 18px;--wp--preset--font-size--huge: 48px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}body .is-layout-grid{display: grid;}body .is-layout-grid > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}
+</style>
+<link rel='stylesheet' id='kadence-blocks-accordion-css' href='https://handsonbanking.org/wp-content/plugins/kadence-blocks/dist/style-blocks-accordion.css?ver=3.2.23' type='text/css' media='all' />
+<link rel='stylesheet' id='kadence-blocks-spacer-css' href='https://handsonbanking.org/wp-content/plugins/kadence-blocks/dist/style-blocks-spacer.css?ver=3.2.23' type='text/css' media='all' />
+<link rel='stylesheet' id='kadence-blocks-tabs-css' href='https://handsonbanking.org/wp-content/plugins/kadence-blocks/dist/style-blocks-tabs.css?ver=3.2.23' type='text/css' media='all' />
+<style id='kadence-blocks-global-variables-inline-css' type='text/css'>
+:root {--global-kb-font-size-sm:clamp(0.8rem, 0.73rem + 0.217vw, 0.9rem);--global-kb-font-size-md:clamp(1.1rem, 0.995rem + 0.326vw, 1.25rem);--global-kb-font-size-lg:clamp(1.75rem, 1.576rem + 0.543vw, 2rem);--global-kb-font-size-xl:clamp(2.25rem, 1.728rem + 1.63vw, 3rem);--global-kb-font-size-xxl:clamp(2.5rem, 1.456rem + 3.26vw, 4rem);--global-kb-font-size-xxxl:clamp(2.75rem, 0.489rem + 7.065vw, 6rem);}:root {--global-palette1: #3182CE;--global-palette2: #2B6CB0;--global-palette3: #1A202C;--global-palette4: #2D3748;--global-palette5: #4A5568;--global-palette6: #718096;--global-palette7: #EDF2F7;--global-palette8: #F7FAFC;--global-palette9: #ffffff;}
+</style>
+<style id='kadence_blocks_css-inline-css' type='text/css'>
+.kt-accordion-id839_a5f7df-19 .kt-accordion-panel-inner{border-top:0px solid transparent;border-right:1px solid transparent;border-bottom:1px solid transparent;border-left:1px solid transparent;background:#ffffff;}.kt-accordion-id839_a5f7df-19 .wp-block-kadence-pane .kt-accordion-header-wrap .kt-blocks-accordion-header{border-top:1px solid #eeeeee;border-right:1px solid #eeeeee;border-bottom:1px solid #eeeeee;border-left:2px solid #eeeeee;border-top-left-radius:0px;border-top-right-radius:0px;border-bottom-right-radius:0px;border-bottom-left-radius:0px;background:#ffffff;font-size:18px;line-height:24px;color:#444444;padding-top:14px;padding-right:16px;padding-bottom:14px;padding-left:16px;}.kt-accordion-wrap.kt-accordion-id839_a5f7df-19 > .kt-accordion-inner-wrap > .kt-accordion-pane > .kt-accordion-header-wrap{margin-top:10px;}.single-content .wp-block-kadence-pane>h2:first-child,
+			.single-content .wp-block-kadence-pane>h3:first-child,
+			.single-content .wp-block-kadence-pane>h4:first-child,
+			.single-content .wp-block-kadence-pane>h5:first-child,
+			.single-content .wp-block-kadence-pane>h6:first-child{margin-top:10px;}.kt-accordion-id839_a5f7df-19:not( .kt-accodion-icon-style-basiccircle ):not( .kt-accodion-icon-style-xclosecircle ):not( .kt-accodion-icon-style-arrowcircle ) .kt-blocks-accordion-icon-trigger:after, .kt-accordion-id839_a5f7df-19:not( .kt-accodion-icon-style-basiccircle ):not( .kt-accodion-icon-style-xclosecircle ):not( .kt-accodion-icon-style-arrowcircle ) .kt-blocks-accordion-icon-trigger:before{background:#444444;}.kt-accordion-id839_a5f7df-19:not( .kt-accodion-icon-style-basic ):not( .kt-accodion-icon-style-xclose ):not( .kt-accodion-icon-style-arrow ) .kt-blocks-accordion-icon-trigger{background:#444444;}.kt-accordion-id839_a5f7df-19:not( .kt-accodion-icon-style-basic ):not( .kt-accodion-icon-style-xclose ):not( .kt-accodion-icon-style-arrow ) .kt-blocks-accordion-icon-trigger:after, .kt-accordion-id839_a5f7df-19:not( .kt-accodion-icon-style-basic ):not( .kt-accodion-icon-style-xclose ):not( .kt-accodion-icon-style-arrow ) .kt-blocks-accordion-icon-trigger:before{background:#ffffff;}.kt-accordion-id839_a5f7df-19 .kt-accordion-header-wrap .kt-blocks-accordion-header:hover, body:not(.hide-focus-outline) .kt-accordion-id839_a5f7df-19 .kt-accordion-header-wrap .kt-blocks-accordion-header:focus{color:#444444;background:#ffffff;border-top:1px solid #d4d4d4;border-right:1px solid #d4d4d4;border-bottom:1px solid #d4d4d4;border-left:2px solid #d4d4d4;}.kt-accordion-id839_a5f7df-19:not( .kt-accodion-icon-style-basiccircle ):not( .kt-accodion-icon-style-xclosecircle ):not( .kt-accodion-icon-style-arrowcircle ) .kt-blocks-accordion-header:hover .kt-blocks-accordion-icon-trigger:after, .kt-accordion-id839_a5f7df-19:not( .kt-accodion-icon-style-basiccircle ):not( .kt-accodion-icon-style-xclosecircle ):not( .kt-accodion-icon-style-arrowcircle ) .kt-blocks-accordion-header:hover .kt-blocks-accordion-icon-trigger:before, body:not(.hide-focus-outline) .kt-accordion-id839_a5f7df-19:not( .kt-accodion-icon-style-basiccircle ):not( .kt-accodion-icon-style-xclosecircle ):not( .kt-accodion-icon-style-arrowcircle ) .kt-blocks-accordion-header:focus .kt-blocks-accordion-icon-trigger:after, body:not(.hide-focus-outline) .kt-accordion-id839_a5f7df-19:not( .kt-accodion-icon-style-basiccircle ):not( .kt-accodion-icon-style-xclosecircle ):not( .kt-accodion-icon-style-arrowcircle ) .kt-blocks-accordion-header:focus .kt-blocks-accordion-icon-trigger:before{background:#444444;}.kt-accordion-id839_a5f7df-19:not( .kt-accodion-icon-style-basic ):not( .kt-accodion-icon-style-xclose ):not( .kt-accodion-icon-style-arrow ) .kt-blocks-accordion-header:hover .kt-blocks-accordion-icon-trigger, body:not(.hide-focus-outline) .kt-accordion-id839_a5f7df-19:not( .kt-accodion-icon-style-basic ):not( .kt-accodion-icon-style-xclose ):not( .kt-accodion-icon-style-arrow ) .kt-blocks-accordion-header:focus .kt-blocks-accordion-icon-trigger{background:#444444;}.kt-accordion-id839_a5f7df-19:not( .kt-accodion-icon-style-basic ):not( .kt-accodion-icon-style-xclose ):not( .kt-accodion-icon-style-arrow ) .kt-blocks-accordion-header:hover .kt-blocks-accordion-icon-trigger:after, .kt-accordion-id839_a5f7df-19:not( .kt-accodion-icon-style-basic ):not( .kt-accodion-icon-style-xclose ):not( .kt-accodion-icon-style-arrow ) .kt-blocks-accordion-header:hover .kt-blocks-accordion-icon-trigger:before, body:not(.hide-focus-outline) .kt-accordion-id839_a5f7df-19:not( .kt-accodion-icon-style-basic ):not( .kt-accodion-icon-style-xclose ):not( .kt-accodion-icon-style-arrow ) .kt-blocks-accordion-header:focus .kt-blocks-accordion-icon-trigger:after, body:not(.hide-focus-outline) .kt-accordion-id839_a5f7df-19:not( .kt-accodion-icon-style-basic ):not( .kt-accodion-icon-style-xclose ):not( .kt-accodion-icon-style-arrow ) .kt-blocks-accordion-header:focus .kt-blocks-accordion-icon-trigger:before{background:#ffffff;}.kt-accordion-id839_a5f7df-19 .kt-accordion-header-wrap .kt-blocks-accordion-header.kt-accordion-panel-active{color:#444444;background:#ffffff;border-top:1px solid #eeeeee;border-right:1px solid #eeeeee;border-bottom:1px solid #eeeeee;border-left:2px solid #0e9cd1;}.kt-accordion-id839_a5f7df-19:not( .kt-accodion-icon-style-basiccircle ):not( .kt-accodion-icon-style-xclosecircle ):not( .kt-accodion-icon-style-arrowcircle ) .kt-blocks-accordion-header.kt-accordion-panel-active .kt-blocks-accordion-icon-trigger:after, .kt-accordion-id839_a5f7df-19:not( .kt-accodion-icon-style-basiccircle ):not( .kt-accodion-icon-style-xclosecircle ):not( .kt-accodion-icon-style-arrowcircle ) .kt-blocks-accordion-header.kt-accordion-panel-active .kt-blocks-accordion-icon-trigger:before{background:#444444;}.kt-accordion-id839_a5f7df-19:not( .kt-accodion-icon-style-basic ):not( .kt-accodion-icon-style-xclose ):not( .kt-accodion-icon-style-arrow ) .kt-blocks-accordion-header.kt-accordion-panel-active .kt-blocks-accordion-icon-trigger{background:#444444;}.kt-accordion-id839_a5f7df-19:not( .kt-accodion-icon-style-basic ):not( .kt-accodion-icon-style-xclose ):not( .kt-accodion-icon-style-arrow ) .kt-blocks-accordion-header.kt-accordion-panel-active .kt-blocks-accordion-icon-trigger:after, .kt-accordion-id839_a5f7df-19:not( .kt-accodion-icon-style-basic ):not( .kt-accodion-icon-style-xclose ):not( .kt-accodion-icon-style-arrow ) .kt-blocks-accordion-header.kt-accordion-panel-active .kt-blocks-accordion-icon-trigger:before{background:#ffffff;}@media all and (max-width: 1024px){.kt-accordion-id839_a5f7df-19 .kt-accordion-panel-inner{border-top:0px solid transparent;border-right:1px solid transparent;border-bottom:1px solid transparent;border-left:1px solid transparent;}}@media all and (max-width: 1024px){.kt-accordion-id839_a5f7df-19 .wp-block-kadence-pane .kt-accordion-header-wrap .kt-blocks-accordion-header{border-top:1px solid #eeeeee;border-right:1px solid #eeeeee;border-bottom:1px solid #eeeeee;border-left:2px solid #eeeeee;}}@media all and (max-width: 1024px){.kt-accordion-id839_a5f7df-19 .kt-accordion-header-wrap .kt-blocks-accordion-header:hover, body:not(.hide-focus-outline) .kt-accordion-id839_a5f7df-19 .kt-accordion-header-wrap .kt-blocks-accordion-header:focus{border-top:1px solid #d4d4d4;border-right:1px solid #d4d4d4;border-bottom:1px solid #d4d4d4;border-left:2px solid #d4d4d4;}}@media all and (max-width: 1024px){.kt-accordion-id839_a5f7df-19 .kt-accordion-header-wrap .kt-blocks-accordion-header.kt-accordion-panel-active{border-top:1px solid #eeeeee;border-right:1px solid #eeeeee;border-bottom:1px solid #eeeeee;border-left:2px solid #0e9cd1;}}@media all and (max-width: 767px){.kt-accordion-id839_a5f7df-19 .kt-accordion-panel-inner{border-top:0px solid transparent;border-right:1px solid transparent;border-bottom:1px solid transparent;border-left:1px solid transparent;}.kt-accordion-id839_a5f7df-19 .wp-block-kadence-pane .kt-accordion-header-wrap .kt-blocks-accordion-header{border-top:1px solid #eeeeee;border-right:1px solid #eeeeee;border-bottom:1px solid #eeeeee;border-left:2px solid #eeeeee;}.kt-accordion-id839_a5f7df-19 .kt-accordion-header-wrap .kt-blocks-accordion-header:hover, body:not(.hide-focus-outline) .kt-accordion-id839_a5f7df-19 .kt-accordion-header-wrap .kt-blocks-accordion-header:focus{border-top:1px solid #d4d4d4;border-right:1px solid #d4d4d4;border-bottom:1px solid #d4d4d4;border-left:2px solid #d4d4d4;}.kt-accordion-id839_a5f7df-19 .kt-accordion-header-wrap .kt-blocks-accordion-header.kt-accordion-panel-active{border-top:1px solid #eeeeee;border-right:1px solid #eeeeee;border-bottom:1px solid #eeeeee;border-left:2px solid #0e9cd1;}}.wp-block-kadence-spacer.kt-block-spacer-839_0f20f7-bf .kt-divider{border-top-width:5px;height:1px;border-top-color:#bfcec2;width:80%;}.kt-accordion-id839_5d4f66-3f .kt-accordion-panel-inner{border-top:0px solid transparent;border-right:1px solid transparent;border-bottom:1px solid transparent;border-left:1px solid transparent;background:#ffffff;}.kt-accordion-id839_5d4f66-3f .wp-block-kadence-pane .kt-accordion-header-wrap .kt-blocks-accordion-header{border-top:1px solid #888888;border-right:1px solid #888888;border-bottom:1px solid #888888;border-left:2px solid #888888;border-top-left-radius:0px;border-top-right-radius:0px;border-bottom-right-radius:0px;border-bottom-left-radius:0px;background:#ffffff;font-size:18px;line-height:24px;color:#444444;padding-top:14px;padding-right:16px;padding-bottom:14px;padding-left:16px;}.kt-accordion-wrap.kt-accordion-id839_5d4f66-3f > .kt-accordion-inner-wrap > .kt-accordion-pane > .kt-accordion-header-wrap{margin-top:10px;}.single-content .wp-block-kadence-pane>h2:first-child,
+			.single-content .wp-block-kadence-pane>h3:first-child,
+			.single-content .wp-block-kadence-pane>h4:first-child,
+			.single-content .wp-block-kadence-pane>h5:first-child,
+			.single-content .wp-block-kadence-pane>h6:first-child{margin-top:10px;}.kt-accordion-id839_5d4f66-3f:not( .kt-accodion-icon-style-basiccircle ):not( .kt-accodion-icon-style-xclosecircle ):not( .kt-accodion-icon-style-arrowcircle ) .kt-blocks-accordion-icon-trigger:after, .kt-accordion-id839_5d4f66-3f:not( .kt-accodion-icon-style-basiccircle ):not( .kt-accodion-icon-style-xclosecircle ):not( .kt-accodion-icon-style-arrowcircle ) .kt-blocks-accordion-icon-trigger:before{background:#444444;}.kt-accordion-id839_5d4f66-3f:not( .kt-accodion-icon-style-basic ):not( .kt-accodion-icon-style-xclose ):not( .kt-accodion-icon-style-arrow ) .kt-blocks-accordion-icon-trigger{background:#444444;}.kt-accordion-id839_5d4f66-3f:not( .kt-accodion-icon-style-basic ):not( .kt-accodion-icon-style-xclose ):not( .kt-accodion-icon-style-arrow ) .kt-blocks-accordion-icon-trigger:after, .kt-accordion-id839_5d4f66-3f:not( .kt-accodion-icon-style-basic ):not( .kt-accodion-icon-style-xclose ):not( .kt-accodion-icon-style-arrow ) .kt-blocks-accordion-icon-trigger:before{background:#ffffff;}.kt-accordion-id839_5d4f66-3f .kt-accordion-header-wrap .kt-blocks-accordion-header:hover, body:not(.hide-focus-outline) .kt-accordion-id839_5d4f66-3f .kt-accordion-header-wrap .kt-blocks-accordion-header:focus{color:#ffffff;background:#a04d10;border-top:1px solid #888888;border-right:1px solid #888888;border-bottom:1px solid #888888;border-left:2px solid #888888;}.kt-accordion-id839_5d4f66-3f:not( .kt-accodion-icon-style-basiccircle ):not( .kt-accodion-icon-style-xclosecircle ):not( .kt-accodion-icon-style-arrowcircle ) .kt-blocks-accordion-header:hover .kt-blocks-accordion-icon-trigger:after, .kt-accordion-id839_5d4f66-3f:not( .kt-accodion-icon-style-basiccircle ):not( .kt-accodion-icon-style-xclosecircle ):not( .kt-accodion-icon-style-arrowcircle ) .kt-blocks-accordion-header:hover .kt-blocks-accordion-icon-trigger:before, body:not(.hide-focus-outline) .kt-accordion-id839_5d4f66-3f:not( .kt-accodion-icon-style-basiccircle ):not( .kt-accodion-icon-style-xclosecircle ):not( .kt-accodion-icon-style-arrowcircle ) .kt-blocks-accordion-header:focus .kt-blocks-accordion-icon-trigger:after, body:not(.hide-focus-outline) .kt-accordion-id839_5d4f66-3f:not( .kt-accodion-icon-style-basiccircle ):not( .kt-accodion-icon-style-xclosecircle ):not( .kt-accodion-icon-style-arrowcircle ) .kt-blocks-accordion-header:focus .kt-blocks-accordion-icon-trigger:before{background:#ffffff;}.kt-accordion-id839_5d4f66-3f:not( .kt-accodion-icon-style-basic ):not( .kt-accodion-icon-style-xclose ):not( .kt-accodion-icon-style-arrow ) .kt-blocks-accordion-header:hover .kt-blocks-accordion-icon-trigger, body:not(.hide-focus-outline) .kt-accordion-id839_5d4f66-3f:not( .kt-accodion-icon-style-basic ):not( .kt-accodion-icon-style-xclose ):not( .kt-accodion-icon-style-arrow ) .kt-blocks-accordion-header:focus .kt-blocks-accordion-icon-trigger{background:#ffffff;}.kt-accordion-id839_5d4f66-3f:not( .kt-accodion-icon-style-basic ):not( .kt-accodion-icon-style-xclose ):not( .kt-accodion-icon-style-arrow ) .kt-blocks-accordion-header:hover .kt-blocks-accordion-icon-trigger:after, .kt-accordion-id839_5d4f66-3f:not( .kt-accodion-icon-style-basic ):not( .kt-accodion-icon-style-xclose ):not( .kt-accodion-icon-style-arrow ) .kt-blocks-accordion-header:hover .kt-blocks-accordion-icon-trigger:before, body:not(.hide-focus-outline) .kt-accordion-id839_5d4f66-3f:not( .kt-accodion-icon-style-basic ):not( .kt-accodion-icon-style-xclose ):not( .kt-accodion-icon-style-arrow ) .kt-blocks-accordion-header:focus .kt-blocks-accordion-icon-trigger:after, body:not(.hide-focus-outline) .kt-accordion-id839_5d4f66-3f:not( .kt-accodion-icon-style-basic ):not( .kt-accodion-icon-style-xclose ):not( .kt-accodion-icon-style-arrow ) .kt-blocks-accordion-header:focus .kt-blocks-accordion-icon-trigger:before{background:#a04d10;}.kt-accordion-id839_5d4f66-3f .kt-accordion-header-wrap .kt-blocks-accordion-header.kt-accordion-panel-active{color:#ffffff;background:#345c6f;border-top:1px solid #737373;border-right:1px solid #737373;border-bottom:1px solid #737373;border-left:2px solid #737373;}.kt-accordion-id839_5d4f66-3f:not( .kt-accodion-icon-style-basiccircle ):not( .kt-accodion-icon-style-xclosecircle ):not( .kt-accodion-icon-style-arrowcircle ) .kt-blocks-accordion-header.kt-accordion-panel-active .kt-blocks-accordion-icon-trigger:after, .kt-accordion-id839_5d4f66-3f:not( .kt-accodion-icon-style-basiccircle ):not( .kt-accodion-icon-style-xclosecircle ):not( .kt-accodion-icon-style-arrowcircle ) .kt-blocks-accordion-header.kt-accordion-panel-active .kt-blocks-accordion-icon-trigger:before{background:#ffffff;}.kt-accordion-id839_5d4f66-3f:not( .kt-accodion-icon-style-basic ):not( .kt-accodion-icon-style-xclose ):not( .kt-accodion-icon-style-arrow ) .kt-blocks-accordion-header.kt-accordion-panel-active .kt-blocks-accordion-icon-trigger{background:#ffffff;}.kt-accordion-id839_5d4f66-3f:not( .kt-accodion-icon-style-basic ):not( .kt-accodion-icon-style-xclose ):not( .kt-accodion-icon-style-arrow ) .kt-blocks-accordion-header.kt-accordion-panel-active .kt-blocks-accordion-icon-trigger:after, .kt-accordion-id839_5d4f66-3f:not( .kt-accodion-icon-style-basic ):not( .kt-accodion-icon-style-xclose ):not( .kt-accodion-icon-style-arrow ) .kt-blocks-accordion-header.kt-accordion-panel-active .kt-blocks-accordion-icon-trigger:before{background:#345c6f;}@media all and (max-width: 1024px){.kt-accordion-id839_5d4f66-3f .kt-accordion-panel-inner{border-top:0px solid transparent;border-right:1px solid transparent;border-bottom:1px solid transparent;border-left:1px solid transparent;}}@media all and (max-width: 1024px){.kt-accordion-id839_5d4f66-3f .wp-block-kadence-pane .kt-accordion-header-wrap .kt-blocks-accordion-header{border-top:1px solid #888888;border-right:1px solid #888888;border-bottom:1px solid #888888;border-left:2px solid #888888;}}@media all and (max-width: 1024px){.kt-accordion-id839_5d4f66-3f .kt-accordion-header-wrap .kt-blocks-accordion-header:hover, body:not(.hide-focus-outline) .kt-accordion-id839_5d4f66-3f .kt-accordion-header-wrap .kt-blocks-accordion-header:focus{border-top:1px solid #888888;border-right:1px solid #888888;border-bottom:1px solid #888888;border-left:2px solid #888888;}}@media all and (max-width: 1024px){.kt-accordion-id839_5d4f66-3f .kt-accordion-header-wrap .kt-blocks-accordion-header.kt-accordion-panel-active{border-top:1px solid #737373;border-right:1px solid #737373;border-bottom:1px solid #737373;border-left:2px solid #737373;}}@media all and (max-width: 767px){.kt-accordion-id839_5d4f66-3f .kt-accordion-panel-inner{border-top:0px solid transparent;border-right:1px solid transparent;border-bottom:1px solid transparent;border-left:1px solid transparent;}.kt-accordion-id839_5d4f66-3f .wp-block-kadence-pane .kt-accordion-header-wrap .kt-blocks-accordion-header{border-top:1px solid #888888;border-right:1px solid #888888;border-bottom:1px solid #888888;border-left:2px solid #888888;}.kt-accordion-id839_5d4f66-3f .kt-accordion-header-wrap .kt-blocks-accordion-header:hover, body:not(.hide-focus-outline) .kt-accordion-id839_5d4f66-3f .kt-accordion-header-wrap .kt-blocks-accordion-header:focus{border-top:1px solid #888888;border-right:1px solid #888888;border-bottom:1px solid #888888;border-left:2px solid #888888;}.kt-accordion-id839_5d4f66-3f .kt-accordion-header-wrap .kt-blocks-accordion-header.kt-accordion-panel-active{border-top:1px solid #737373;border-right:1px solid #737373;border-bottom:1px solid #737373;border-left:2px solid #737373;}}.wp-block-kadence-spacer.kt-block-spacer-839_abcbe4-61 .kt-divider{border-top-width:5px;height:1px;border-top-color:#bfcec2;width:80%;}.wp-block-kadence-spacer.kt-block-spacer-839_7cd54f-1c .kt-divider{border-top-width:5px;height:1px;border-top-color:#bfcec2;width:80%;}.kt-tabs-id839_992920-e5 > .kt-tabs-content-wrap > .wp-block-kadence-tab{border-top:1px solid #bcbcbc;border-right:1px solid #bcbcbc;border-bottom:1px solid #bcbcbc;border-left:1px solid #bcbcbc;padding-top:20px;padding-right:20px;padding-bottom:20px;padding-left:20px;background:#ffffff;}.wp-block-kadence-tabs .kt-tabs-id839_992920-e5 > .kt-tabs-title-list li{margin-top:0px;margin-right:8px;margin-bottom:-1px;margin-left:0px;}.wp-block-kadence-tabs .kt-tabs-id839_992920-e5 > .kt-tabs-title-list li:last-child{margin-right:0px;}.wp-block-kadence-tabs .kt-tabs-id839_992920-e5 > .kt-tabs-title-list li .kt-tab-title, .wp-block-kadence-tabs .kt-tabs-id839_992920-e5 > .kt-tabs-content-wrap > .kt-tabs-accordion-title .kt-tab-title{font-size:1.1em;line-height:1.4em;border-top-width:1px;border-right-width:1px;border-bottom-width:0px;border-left-width:1px;border-top-left-radius:4px;border-top-right-radius:4px;border-bottom-right-radius:0px;border-bottom-left-radius:0px;padding-top:8px;padding-right:20px;padding-bottom:8px;padding-left:20px;border-color:#eeeeee;color:#444444;background:#bfcec2;}.wp-block-kadence-tabs .kt-tabs-id839_992920-e5 > .kt-tabs-content-wrap > .kt-tabs-accordion-title .kt-tab-title{margin-top:0px;margin-right:8px;margin-bottom:-1px;margin-left:0px;}.wp-block-kadence-tabs .kt-tabs-id839_992920-e5 > .kt-tabs-title-list li .kt-tab-title:hover, .wp-block-kadence-tabs .kt-tabs-id839_992920-e5 > .kt-tabs-content-wrap > .kt-tabs-accordion-title .kt-tab-title:hover{border-color:#e2e2e2;color:#444444;background:#ffffff;}.wp-block-kadence-tabs .kt-tabs-id839_992920-e5 > .kt-tabs-title-list li.kt-tab-title-active .kt-tab-title, .wp-block-kadence-tabs .kt-tabs-id839_992920-e5 > .kt-tabs-content-wrap > .kt-tabs-accordion-title.kt-tab-title-active .kt-tab-title{border-color:#bcbcbc;color:#444444;background:#ffffff;}@media all and (max-width: 1024px){.kt-tabs-id839_992920-e5 > .kt-tabs-content-wrap > .wp-block-kadence-tab{border-top:1px solid #bcbcbc;border-right:1px solid #bcbcbc;border-bottom:1px solid #bcbcbc;border-left:1px solid #bcbcbc;}}@media all and (max-width: 767px){.kt-tabs-id839_992920-e5 > .kt-tabs-content-wrap > .wp-block-kadence-tab{border-top:1px solid #bcbcbc;border-right:1px solid #bcbcbc;border-bottom:1px solid #bcbcbc;border-left:1px solid #bcbcbc;}}.wp-block-kadence-spacer.kt-block-spacer-839_a9d066-12 .kt-divider{border-top-width:5px;height:1px;border-top-color:#bfcec2;width:100%;}.wp-block-kadence-spacer.kt-block-spacer-839_fed052-22 .kt-divider{border-top-width:5px;height:1px;border-top-color:#bfcec2;width:80%;}.kt-accordion-id839_8aed7b-a5 .kt-accordion-panel-inner{border-top:0px solid transparent;border-right:1px solid transparent;border-bottom:1px solid transparent;border-left:1px solid transparent;background:#ffffff;}.kt-accordion-id839_8aed7b-a5 .wp-block-kadence-pane .kt-accordion-header-wrap .kt-blocks-accordion-header{border-top:2px solid #888888;border-right:2px solid #888888;border-bottom:2px solid #888888;border-left:2px solid #888888;border-top-left-radius:5px;border-top-right-radius:5px;border-bottom-right-radius:5px;border-bottom-left-radius:5px;background:#ffffff;font-size:18px;line-height:24px;color:#444444;padding-top:14px;padding-right:16px;padding-bottom:14px;padding-left:16px;}.kt-accordion-wrap.kt-accordion-id839_8aed7b-a5 > .kt-accordion-inner-wrap > .kt-accordion-pane > .kt-accordion-header-wrap{margin-top:10px;}.single-content .wp-block-kadence-pane>h2:first-child,
+			.single-content .wp-block-kadence-pane>h3:first-child,
+			.single-content .wp-block-kadence-pane>h4:first-child,
+			.single-content .wp-block-kadence-pane>h5:first-child,
+			.single-content .wp-block-kadence-pane>h6:first-child{margin-top:10px;}.kt-accordion-id839_8aed7b-a5:not( .kt-accodion-icon-style-basiccircle ):not( .kt-accodion-icon-style-xclosecircle ):not( .kt-accodion-icon-style-arrowcircle ) .kt-blocks-accordion-icon-trigger:after, .kt-accordion-id839_8aed7b-a5:not( .kt-accodion-icon-style-basiccircle ):not( .kt-accodion-icon-style-xclosecircle ):not( .kt-accodion-icon-style-arrowcircle ) .kt-blocks-accordion-icon-trigger:before{background:#444444;}.kt-accordion-id839_8aed7b-a5:not( .kt-accodion-icon-style-basic ):not( .kt-accodion-icon-style-xclose ):not( .kt-accodion-icon-style-arrow ) .kt-blocks-accordion-icon-trigger{background:#444444;}.kt-accordion-id839_8aed7b-a5:not( .kt-accodion-icon-style-basic ):not( .kt-accodion-icon-style-xclose ):not( .kt-accodion-icon-style-arrow ) .kt-blocks-accordion-icon-trigger:after, .kt-accordion-id839_8aed7b-a5:not( .kt-accodion-icon-style-basic ):not( .kt-accodion-icon-style-xclose ):not( .kt-accodion-icon-style-arrow ) .kt-blocks-accordion-icon-trigger:before{background:#ffffff;}.kt-accordion-id839_8aed7b-a5 .kt-accordion-header-wrap .kt-blocks-accordion-header:hover, body:not(.hide-focus-outline) .kt-accordion-id839_8aed7b-a5 .kt-accordion-header-wrap .kt-blocks-accordion-header:focus{color:#ffffff;background:#a04d10;border-top:2px solid #888888;border-right:2px solid #888888;border-bottom:2px solid #888888;border-left:2px solid #888888;}.kt-accordion-id839_8aed7b-a5:not( .kt-accodion-icon-style-basiccircle ):not( .kt-accodion-icon-style-xclosecircle ):not( .kt-accodion-icon-style-arrowcircle ) .kt-blocks-accordion-header:hover .kt-blocks-accordion-icon-trigger:after, .kt-accordion-id839_8aed7b-a5:not( .kt-accodion-icon-style-basiccircle ):not( .kt-accodion-icon-style-xclosecircle ):not( .kt-accodion-icon-style-arrowcircle ) .kt-blocks-accordion-header:hover .kt-blocks-accordion-icon-trigger:before, body:not(.hide-focus-outline) .kt-accordion-id839_8aed7b-a5:not( .kt-accodion-icon-style-basiccircle ):not( .kt-accodion-icon-style-xclosecircle ):not( .kt-accodion-icon-style-arrowcircle ) .kt-blocks-accordion-header:focus .kt-blocks-accordion-icon-trigger:after, body:not(.hide-focus-outline) .kt-accordion-id839_8aed7b-a5:not( .kt-accodion-icon-style-basiccircle ):not( .kt-accodion-icon-style-xclosecircle ):not( .kt-accodion-icon-style-arrowcircle ) .kt-blocks-accordion-header:focus .kt-blocks-accordion-icon-trigger:before{background:#ffffff;}.kt-accordion-id839_8aed7b-a5:not( .kt-accodion-icon-style-basic ):not( .kt-accodion-icon-style-xclose ):not( .kt-accodion-icon-style-arrow ) .kt-blocks-accordion-header:hover .kt-blocks-accordion-icon-trigger, body:not(.hide-focus-outline) .kt-accordion-id839_8aed7b-a5:not( .kt-accodion-icon-style-basic ):not( .kt-accodion-icon-style-xclose ):not( .kt-accodion-icon-style-arrow ) .kt-blocks-accordion-header:focus .kt-blocks-accordion-icon-trigger{background:#ffffff;}.kt-accordion-id839_8aed7b-a5:not( .kt-accodion-icon-style-basic ):not( .kt-accodion-icon-style-xclose ):not( .kt-accodion-icon-style-arrow ) .kt-blocks-accordion-header:hover .kt-blocks-accordion-icon-trigger:after, .kt-accordion-id839_8aed7b-a5:not( .kt-accodion-icon-style-basic ):not( .kt-accodion-icon-style-xclose ):not( .kt-accodion-icon-style-arrow ) .kt-blocks-accordion-header:hover .kt-blocks-accordion-icon-trigger:before, body:not(.hide-focus-outline) .kt-accordion-id839_8aed7b-a5:not( .kt-accodion-icon-style-basic ):not( .kt-accodion-icon-style-xclose ):not( .kt-accodion-icon-style-arrow ) .kt-blocks-accordion-header:focus .kt-blocks-accordion-icon-trigger:after, body:not(.hide-focus-outline) .kt-accordion-id839_8aed7b-a5:not( .kt-accodion-icon-style-basic ):not( .kt-accodion-icon-style-xclose ):not( .kt-accodion-icon-style-arrow ) .kt-blocks-accordion-header:focus .kt-blocks-accordion-icon-trigger:before{background:#a04d10;}.kt-accordion-id839_8aed7b-a5 .kt-accordion-header-wrap .kt-blocks-accordion-header.kt-accordion-panel-active{color:#ffffff;background:#345c6f;border-top:2px solid #888888;border-right:2px solid #888888;border-bottom:2px solid #888888;border-left:2px solid #888888;}.kt-accordion-id839_8aed7b-a5:not( .kt-accodion-icon-style-basiccircle ):not( .kt-accodion-icon-style-xclosecircle ):not( .kt-accodion-icon-style-arrowcircle ) .kt-blocks-accordion-header.kt-accordion-panel-active .kt-blocks-accordion-icon-trigger:after, .kt-accordion-id839_8aed7b-a5:not( .kt-accodion-icon-style-basiccircle ):not( .kt-accodion-icon-style-xclosecircle ):not( .kt-accodion-icon-style-arrowcircle ) .kt-blocks-accordion-header.kt-accordion-panel-active .kt-blocks-accordion-icon-trigger:before{background:#ffffff;}.kt-accordion-id839_8aed7b-a5:not( .kt-accodion-icon-style-basic ):not( .kt-accodion-icon-style-xclose ):not( .kt-accodion-icon-style-arrow ) .kt-blocks-accordion-header.kt-accordion-panel-active .kt-blocks-accordion-icon-trigger{background:#ffffff;}.kt-accordion-id839_8aed7b-a5:not( .kt-accodion-icon-style-basic ):not( .kt-accodion-icon-style-xclose ):not( .kt-accodion-icon-style-arrow ) .kt-blocks-accordion-header.kt-accordion-panel-active .kt-blocks-accordion-icon-trigger:after, .kt-accordion-id839_8aed7b-a5:not( .kt-accodion-icon-style-basic ):not( .kt-accodion-icon-style-xclose ):not( .kt-accodion-icon-style-arrow ) .kt-blocks-accordion-header.kt-accordion-panel-active .kt-blocks-accordion-icon-trigger:before{background:#345c6f;}@media all and (max-width: 1024px){.kt-accordion-id839_8aed7b-a5 .kt-accordion-panel-inner{border-top:0px solid transparent;border-right:1px solid transparent;border-bottom:1px solid transparent;border-left:1px solid transparent;}}@media all and (max-width: 1024px){.kt-accordion-id839_8aed7b-a5 .wp-block-kadence-pane .kt-accordion-header-wrap .kt-blocks-accordion-header{border-top:2px solid #888888;border-right:2px solid #888888;border-bottom:2px solid #888888;border-left:2px solid #888888;}}@media all and (max-width: 1024px){.kt-accordion-id839_8aed7b-a5 .kt-accordion-header-wrap .kt-blocks-accordion-header:hover, body:not(.hide-focus-outline) .kt-accordion-id839_8aed7b-a5 .kt-accordion-header-wrap .kt-blocks-accordion-header:focus{border-top:2px solid #888888;border-right:2px solid #888888;border-bottom:2px solid #888888;border-left:2px solid #888888;}}@media all and (max-width: 1024px){.kt-accordion-id839_8aed7b-a5 .kt-accordion-header-wrap .kt-blocks-accordion-header.kt-accordion-panel-active{border-top:2px solid #888888;border-right:2px solid #888888;border-bottom:2px solid #888888;border-left:2px solid #888888;}}@media all and (max-width: 767px){.kt-accordion-id839_8aed7b-a5 .kt-accordion-panel-inner{border-top:0px solid transparent;border-right:1px solid transparent;border-bottom:1px solid transparent;border-left:1px solid transparent;}.kt-accordion-id839_8aed7b-a5 .wp-block-kadence-pane .kt-accordion-header-wrap .kt-blocks-accordion-header{border-top:2px solid #888888;border-right:2px solid #888888;border-bottom:2px solid #888888;border-left:2px solid #888888;}.kt-accordion-id839_8aed7b-a5 .kt-accordion-header-wrap .kt-blocks-accordion-header:hover, body:not(.hide-focus-outline) .kt-accordion-id839_8aed7b-a5 .kt-accordion-header-wrap .kt-blocks-accordion-header:focus{border-top:2px solid #888888;border-right:2px solid #888888;border-bottom:2px solid #888888;border-left:2px solid #888888;}.kt-accordion-id839_8aed7b-a5 .kt-accordion-header-wrap .kt-blocks-accordion-header.kt-accordion-panel-active{border-top:2px solid #888888;border-right:2px solid #888888;border-bottom:2px solid #888888;border-left:2px solid #888888;}}.kt-accordion-id839_5f55c9-24 .kt-accordion-panel-inner{border-top:0px solid transparent;border-right:1px solid transparent;border-bottom:1px solid transparent;border-left:1px solid transparent;background:#ffffff;}.kt-accordion-id839_5f55c9-24 .wp-block-kadence-pane .kt-accordion-header-wrap .kt-blocks-accordion-header{border-top:2px solid #888888;border-right:2px solid #888888;border-bottom:2px solid #888888;border-left:2px solid #888888;border-top-left-radius:5px;border-top-right-radius:5px;border-bottom-right-radius:5px;border-bottom-left-radius:5px;background:#ffffff;font-size:18px;line-height:24px;color:#444444;padding-top:14px;padding-right:16px;padding-bottom:14px;padding-left:16px;}.kt-accordion-wrap.kt-accordion-id839_5f55c9-24 > .kt-accordion-inner-wrap > .kt-accordion-pane > .kt-accordion-header-wrap{margin-top:10px;}.single-content .wp-block-kadence-pane>h2:first-child,
+			.single-content .wp-block-kadence-pane>h3:first-child,
+			.single-content .wp-block-kadence-pane>h4:first-child,
+			.single-content .wp-block-kadence-pane>h5:first-child,
+			.single-content .wp-block-kadence-pane>h6:first-child{margin-top:10px;}.kt-accordion-id839_5f55c9-24:not( .kt-accodion-icon-style-basiccircle ):not( .kt-accodion-icon-style-xclosecircle ):not( .kt-accodion-icon-style-arrowcircle ) .kt-blocks-accordion-icon-trigger:after, .kt-accordion-id839_5f55c9-24:not( .kt-accodion-icon-style-basiccircle ):not( .kt-accodion-icon-style-xclosecircle ):not( .kt-accodion-icon-style-arrowcircle ) .kt-blocks-accordion-icon-trigger:before{background:#444444;}.kt-accordion-id839_5f55c9-24:not( .kt-accodion-icon-style-basic ):not( .kt-accodion-icon-style-xclose ):not( .kt-accodion-icon-style-arrow ) .kt-blocks-accordion-icon-trigger{background:#444444;}.kt-accordion-id839_5f55c9-24:not( .kt-accodion-icon-style-basic ):not( .kt-accodion-icon-style-xclose ):not( .kt-accodion-icon-style-arrow ) .kt-blocks-accordion-icon-trigger:after, .kt-accordion-id839_5f55c9-24:not( .kt-accodion-icon-style-basic ):not( .kt-accodion-icon-style-xclose ):not( .kt-accodion-icon-style-arrow ) .kt-blocks-accordion-icon-trigger:before{background:#ffffff;}.kt-accordion-id839_5f55c9-24 .kt-accordion-header-wrap .kt-blocks-accordion-header:hover, body:not(.hide-focus-outline) .kt-accordion-id839_5f55c9-24 .kt-accordion-header-wrap .kt-blocks-accordion-header:focus{color:#ffffff;background:#a04d10;border-top:2px solid #888888;border-right:2px solid #888888;border-bottom:2px solid #888888;border-left:2px solid #888888;}.kt-accordion-id839_5f55c9-24:not( .kt-accodion-icon-style-basiccircle ):not( .kt-accodion-icon-style-xclosecircle ):not( .kt-accodion-icon-style-arrowcircle ) .kt-blocks-accordion-header:hover .kt-blocks-accordion-icon-trigger:after, .kt-accordion-id839_5f55c9-24:not( .kt-accodion-icon-style-basiccircle ):not( .kt-accodion-icon-style-xclosecircle ):not( .kt-accodion-icon-style-arrowcircle ) .kt-blocks-accordion-header:hover .kt-blocks-accordion-icon-trigger:before, body:not(.hide-focus-outline) .kt-accordion-id839_5f55c9-24:not( .kt-accodion-icon-style-basiccircle ):not( .kt-accodion-icon-style-xclosecircle ):not( .kt-accodion-icon-style-arrowcircle ) .kt-blocks-accordion-header:focus .kt-blocks-accordion-icon-trigger:after, body:not(.hide-focus-outline) .kt-accordion-id839_5f55c9-24:not( .kt-accodion-icon-style-basiccircle ):not( .kt-accodion-icon-style-xclosecircle ):not( .kt-accodion-icon-style-arrowcircle ) .kt-blocks-accordion-header:focus .kt-blocks-accordion-icon-trigger:before{background:#ffffff;}.kt-accordion-id839_5f55c9-24:not( .kt-accodion-icon-style-basic ):not( .kt-accodion-icon-style-xclose ):not( .kt-accodion-icon-style-arrow ) .kt-blocks-accordion-header:hover .kt-blocks-accordion-icon-trigger, body:not(.hide-focus-outline) .kt-accordion-id839_5f55c9-24:not( .kt-accodion-icon-style-basic ):not( .kt-accodion-icon-style-xclose ):not( .kt-accodion-icon-style-arrow ) .kt-blocks-accordion-header:focus .kt-blocks-accordion-icon-trigger{background:#ffffff;}.kt-accordion-id839_5f55c9-24:not( .kt-accodion-icon-style-basic ):not( .kt-accodion-icon-style-xclose ):not( .kt-accodion-icon-style-arrow ) .kt-blocks-accordion-header:hover .kt-blocks-accordion-icon-trigger:after, .kt-accordion-id839_5f55c9-24:not( .kt-accodion-icon-style-basic ):not( .kt-accodion-icon-style-xclose ):not( .kt-accodion-icon-style-arrow ) .kt-blocks-accordion-header:hover .kt-blocks-accordion-icon-trigger:before, body:not(.hide-focus-outline) .kt-accordion-id839_5f55c9-24:not( .kt-accodion-icon-style-basic ):not( .kt-accodion-icon-style-xclose ):not( .kt-accodion-icon-style-arrow ) .kt-blocks-accordion-header:focus .kt-blocks-accordion-icon-trigger:after, body:not(.hide-focus-outline) .kt-accordion-id839_5f55c9-24:not( .kt-accodion-icon-style-basic ):not( .kt-accodion-icon-style-xclose ):not( .kt-accodion-icon-style-arrow ) .kt-blocks-accordion-header:focus .kt-blocks-accordion-icon-trigger:before{background:#a04d10;}.kt-accordion-id839_5f55c9-24 .kt-accordion-header-wrap .kt-blocks-accordion-header.kt-accordion-panel-active{color:#ffffff;background:#345c6f;border-top:2px solid #888888;border-right:2px solid #888888;border-bottom:2px solid #888888;border-left:2px solid #888888;}.kt-accordion-id839_5f55c9-24:not( .kt-accodion-icon-style-basiccircle ):not( .kt-accodion-icon-style-xclosecircle ):not( .kt-accodion-icon-style-arrowcircle ) .kt-blocks-accordion-header.kt-accordion-panel-active .kt-blocks-accordion-icon-trigger:after, .kt-accordion-id839_5f55c9-24:not( .kt-accodion-icon-style-basiccircle ):not( .kt-accodion-icon-style-xclosecircle ):not( .kt-accodion-icon-style-arrowcircle ) .kt-blocks-accordion-header.kt-accordion-panel-active .kt-blocks-accordion-icon-trigger:before{background:#ffffff;}.kt-accordion-id839_5f55c9-24:not( .kt-accodion-icon-style-basic ):not( .kt-accodion-icon-style-xclose ):not( .kt-accodion-icon-style-arrow ) .kt-blocks-accordion-header.kt-accordion-panel-active .kt-blocks-accordion-icon-trigger{background:#ffffff;}.kt-accordion-id839_5f55c9-24:not( .kt-accodion-icon-style-basic ):not( .kt-accodion-icon-style-xclose ):not( .kt-accodion-icon-style-arrow ) .kt-blocks-accordion-header.kt-accordion-panel-active .kt-blocks-accordion-icon-trigger:after, .kt-accordion-id839_5f55c9-24:not( .kt-accodion-icon-style-basic ):not( .kt-accodion-icon-style-xclose ):not( .kt-accodion-icon-style-arrow ) .kt-blocks-accordion-header.kt-accordion-panel-active .kt-blocks-accordion-icon-trigger:before{background:#345c6f;}@media all and (max-width: 1024px){.kt-accordion-id839_5f55c9-24 .kt-accordion-panel-inner{border-top:0px solid transparent;border-right:1px solid transparent;border-bottom:1px solid transparent;border-left:1px solid transparent;}}@media all and (max-width: 1024px){.kt-accordion-id839_5f55c9-24 .wp-block-kadence-pane .kt-accordion-header-wrap .kt-blocks-accordion-header{border-top:2px solid #888888;border-right:2px solid #888888;border-bottom:2px solid #888888;border-left:2px solid #888888;}}@media all and (max-width: 1024px){.kt-accordion-id839_5f55c9-24 .kt-accordion-header-wrap .kt-blocks-accordion-header:hover, body:not(.hide-focus-outline) .kt-accordion-id839_5f55c9-24 .kt-accordion-header-wrap .kt-blocks-accordion-header:focus{border-top:2px solid #888888;border-right:2px solid #888888;border-bottom:2px solid #888888;border-left:2px solid #888888;}}@media all and (max-width: 1024px){.kt-accordion-id839_5f55c9-24 .kt-accordion-header-wrap .kt-blocks-accordion-header.kt-accordion-panel-active{border-top:2px solid #888888;border-right:2px solid #888888;border-bottom:2px solid #888888;border-left:2px solid #888888;}}@media all and (max-width: 767px){.kt-accordion-id839_5f55c9-24 .kt-accordion-panel-inner{border-top:0px solid transparent;border-right:1px solid transparent;border-bottom:1px solid transparent;border-left:1px solid transparent;}.kt-accordion-id839_5f55c9-24 .wp-block-kadence-pane .kt-accordion-header-wrap .kt-blocks-accordion-header{border-top:2px solid #888888;border-right:2px solid #888888;border-bottom:2px solid #888888;border-left:2px solid #888888;}.kt-accordion-id839_5f55c9-24 .kt-accordion-header-wrap .kt-blocks-accordion-header:hover, body:not(.hide-focus-outline) .kt-accordion-id839_5f55c9-24 .kt-accordion-header-wrap .kt-blocks-accordion-header:focus{border-top:2px solid #888888;border-right:2px solid #888888;border-bottom:2px solid #888888;border-left:2px solid #888888;}.kt-accordion-id839_5f55c9-24 .kt-accordion-header-wrap .kt-blocks-accordion-header.kt-accordion-panel-active{border-top:2px solid #888888;border-right:2px solid #888888;border-bottom:2px solid #888888;border-left:2px solid #888888;}}.wp-block-kadence-spacer.kt-block-spacer-839_b738e7-c0 .kt-divider{border-top-width:5px;height:1px;border-top-color:#bfcec2;width:80%;}
+</style>
+<link rel='stylesheet' id='style-theme-main-css' href='https://handsonbanking.org/wp-content/themes/hob-2020/dist/index.css?ver=6.4.3' type='text/css' media='all' />
+<style id="kadence_blocks_palette_css">:root .has-kb-palette-1-color{color:#5199ad}:root .has-kb-palette-1-background-color{background-color:#5199ad}:root .has-kb-palette-2-color{color:#f58433}:root .has-kb-palette-2-background-color{background-color:#f58433}:root .has-kb-palette-3-color{color:#ccbe3c}:root .has-kb-palette-3-background-color{background-color:#ccbe3c}:root .has-kb-palette-4-color{color:#5e652b}:root .has-kb-palette-4-background-color{background-color:#5e652b}:root .has-kb-palette-5-color{color:#bf202f}:root .has-kb-palette-5-background-color{background-color:#bf202f}:root .has-kb-palette-6-color{color:#b2b4b9}:root .has-kb-palette-6-background-color{background-color:#b2b4b9}:root .has-kb-palette-7-color{color:#dadbbf}:root .has-kb-palette-7-background-color{background-color:#dadbbf}:root .has-kb-palette-8-color{color:#f2e2bd}:root .has-kb-palette-8-background-color{background-color:#f2e2bd}:root .has-kb-palette-9-color{color:#bfcec2}:root .has-kb-palette-9-background-color{background-color:#bfcec2}:root .has-kb-palette-10-color{color:#c2deea}:root .has-kb-palette-10-background-color{background-color:#c2deea}:root .has-kb-palette-11-color{color:#44464a}:root .has-kb-palette-11-background-color{background-color:#44464a}:root .has-kb-palette-12-color{color:#345c6f}:root .has-kb-palette-12-background-color{background-color:#345c6f}:root .has-kb-palette-13-color{color:#737373}:root .has-kb-palette-13-background-color{background-color:#737373}:root .has-kb-palette-14-color{color:#a04d10}:root .has-kb-palette-14-background-color{background-color:#a04d10}:root .has-kb-palette-15-color{color:#a61c2a}:root .has-kb-palette-15-background-color{background-color:#a61c2a}:root .has-kb-palette-16-color{color:#ffffff}:root .has-kb-palette-16-background-color{background-color:#ffffff}:root .has-kb-palette-17-color{color:#000000}:root .has-kb-palette-17-background-color{background-color:#000000}:root .has-kb-palette-172-color{color:#f9f9f9}:root .has-kb-palette-172-background-color{background-color:#f9f9f9}:root .has-kb-palette-18-color{color:#888888}:root .has-kb-palette-18-background-color{background-color:#888888}:root .has-kb-palette-19-color{color:#888888}:root .has-kb-palette-19-background-color{background-color:#888888}</style><script type="text/javascript" src="https://handsonbanking.org/wp-includes/js/jquery/jquery.min.js?ver=3.7.1" id="jquery-core-js"></script>
+<script type="text/javascript" src="https://handsonbanking.org/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1" id="jquery-migrate-js"></script>
+<link rel="https://api.w.org/" href="https://handsonbanking.org/wp-json/" /><link rel="alternate" type="application/json" href="https://handsonbanking.org/wp-json/wp/v2/resources/839" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://handsonbanking.org/xmlrpc.php?rsd" />
+<meta name="generator" content="WordPress 6.4.3" />
+<link rel='shortlink' href='https://handsonbanking.org/?p=839' />
+<link rel="alternate" type="application/json+oembed" href="https://handsonbanking.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fhandsonbanking.org%2Fresources%2Fall-about-spending%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://handsonbanking.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fhandsonbanking.org%2Fresources%2Fall-about-spending%2F&#038;format=xml" />
+        <script>window.ajaxurl = 'https://handsonbanking.org/wp-admin/admin-ajax.php';</script>
+    </head>
+    <body class="color-hob-blue  resource-template-default single single-resource postid-839 wp-embed-responsive">
+        <div class="reveal" id="external-link-modal" data-reveal aria-modal="true">
+            <header class="entry-header">
+<h1 class="entry-title">You are leaving the <em>Hands on Banking</em> website</h1>
+</header>
+<div class="entry-content"></div>
+<p>You are leaving <em>Hands on Banking.org</em> and entering a website that the <em>Hands on Banking</em> program does not control. The <em>Hands on Banking</em> program has provided this link for your convenience, but does not endorse and is not responsible for the content, links, privacy policy, or security policy of this website.</p>
+            <p id="external-link-text"></p>
+            <div class="grid-x grid-margin-x">
+                <div class="cell small-12 external-button-wrapper">
+                    <a href="" class="external-link button primary" target="_blank">Open Link</a>
+                    <a class="button hollow alert" data-toggle="external-link-modal">Cancel</a>
+                </div>
+            </div>
+        </div>
+        <div class="reveal" id="modal_glossary" data-reveal aria-modal="true">
+            <h2>Glossary</h2>
+            <button class="close-button" data-close aria-label="Close modal" type="button">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <div id="modal_glossary_content">
+                <div class="loading"></div>
+            </div>
+        </div>
+        <div class="small reveal modal_calculator" id="modal_calculator" aria-labelledby="modal_calculator_header" data-reveal aria-modal="true">
+            <div class="grid-container">
+                <div class="grid-x grid-margin-x">
+                    <div class="cell medium-6">
+                        <h2 id="modal_calculator_header">Calculators</h2>
+                    </div>
+                    <div class="cell medium-6">
+                        <button class="close-button" data-close aria-label="Close modal" type="button">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="cell medium-3">
+                        <ul class="vertical tabs" data-tabs id="example-tabs">
+                            <li class="tabs-title is-active"><a href="#panel1v" aria-selected="true">Standard Calculator</a></li>
+                            <li class="tabs-title"><a href="#panel2v">Value of an Investment</a></li>
+                            <li class="tabs-title"><a href="#panel3v">Cost of Loan</a></li>
+                            <li class="tabs-title"><a href="#panel4v">Cost of Mortgage</a></li>
+                            <li class="tabs-title"><a href="#panel5v">Retirement Savings</a></li>
+                            <li class="tabs-title"><a href="#panel6v">Credit Calculator</a></li>
+                            <li class="tabs-title"><a href="#panel7v">Rule of 72</a></li>
+                        </ul>
+                    </div>
+                    <div class="cell medium-9">
+                        <div class="tabs-content" data-tabs-content="example-tabs">
+                            <div class="tabs-panel is-active" id="panel1v">
+                                <div data-calculator-basic >
+    <div class="calc-container">
+        <table>
+            <thead class="show-for-sr"> 
+                <tr>
+                    <th>Standard Calculator</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td colspan="4">
+                        <div class="output">
+                            <div class="display"><span>0</span></div>
+                            <div class="mode"><span class="invisible">+</span></div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button data-id="C" class="calc-but red-but">c</button>
+                    </td>
+                    <td>
+                        <button data-id="±" class="calc-but grey-but">&#177;</button>
+                    </td>
+                    <td>
+                        <button data-id="/" class="calc-but grey-but">&#247;</button>
+                    </td>
+                    <td>
+                        <button data-id="*" class="calc-but grey-but">&#215;</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button data-id="7" class="calc-but white-but">7</button>
+                    </td>
+                    <td>
+                        <button data-id="8" class="calc-but white-but">8</button>
+                    </td>
+                    <td>
+                        <button data-id="9" class="calc-but white-but">9</button>
+                    </td>
+                    <td>
+                        <button data-id="-" class="calc-but grey-but">-</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button data-id="4" class="calc-but white-but">4</button>
+                    </td>
+                    <td>
+                        <button data-id="5" class="calc-but white-but">5</button>
+                    </td>
+                    <td>
+                        <button data-id="6" class="calc-but white-but">6</button>
+                    </td>
+                    <td>
+                        <button data-id="+" class="calc-but grey-but">+</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button data-id="1" class="calc-but white-but">1</button>
+                    </td>
+                    <td>
+                        <button data-id="2" class="calc-but white-but">2</button>
+                    </td>
+                    <td>
+                        <button data-id="3" class="calc-but white-but">3</button>
+                    </td>
+                    <td rowspan="2">
+                        <button data-id="=" class="calc-but eq-but grey-but">=</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button data-id="0" class="calc-but white-but">0</button>
+                    </td>
+                    <td colspan="2">
+                        <button data-id="." class="calc-but white-but">.</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>                            </div>
+                            <div class="tabs-panel" id="panel2v">
+                                <div id="savings-calculator" class="calcs" data-calculator-value-of-investments>
+    <div class="calcs-top"></div>
+    <form class="tighter">
+        <fieldset>
+            <h2 class="screen-reader-text">Value of an Investment</h2>
+            <div class="field">
+                <label for="calc_voi_principal">Enter Your Initial Investment</label>
+                <div class="input-group">
+                    <span class="input-group-label">$</span>
+                    <input type="text" class="input-group-field" name="principal" id="calc_voi_principal">
+                </div>
+            </div>
+            <div class="rgroup">
+                <fieldset class="radios">
+                    <legend>Contribution Frequency</legend>
+                    <input type="radio" name="freq" id="calc_voi_freq_52" value="52">&nbsp;<label for="calc_voi_freq_52">Weekly</label>
+                    <br><input type="radio" name="freq" id="calc_voi_freq_26" value="26">&nbsp;<label for="calc_voi_freq_26">Bi-Weekly</label>
+                    <br><input type="radio" name="freq" id="calc_voi_freq_12" value="12" checked="">&nbsp;<label for="calc_voi_freq_12">Monthly</label>
+                    <br><input type="radio" name="freq" id="calc_voi_freq_1" value="1">&nbsp;<label for="calc_voi_freq_1">Annual</label>
+                </fieldset>
+            </div>
+            <div class="field">
+                <label for="calc_voi_contributions">Contribution Amount</label>
+                <div class="input-group">
+                    <span class="input-group-label">$</span>
+                    <input type="text" class="input-group-field" name="contributions" id="calc_voi_contributions">
+                </div>
+            </div>
+            <div class="field">
+                <label for="calc_voi_interest">Interest Rate %</label>
+                <div class="input-group">
+                    <input type="text" class="input-group-field" name="interest" id="calc_voi_interest">
+                    <span class="input-group-label">%</span>
+                </div>
+            </div>
+            <p>
+                <label for="calc_voi_term">Number of Years to Save</label>
+                <input type="text" name="term" id="calc_voi_term">
+            </p>
+            <div class="calc-results hidden">
+                <p>
+                    <label for="calc_voi_savings">Total Amount*</label>
+                    <input type="text" name="savings" id="calc_voi_savings" readonly="readonly">
+                </p>
+                <p class="field-footnote">* Daily compounding, with contributions made at the end of the time period.</p>
+            </div>
+            <p class="calcs-buts panel clearfix">
+                <button class="button primary" type="submit">Calculate</button>
+                <button class="button hollow alert float-right" type="reset">Reset</button>
+            </p>
+        </fieldset>
+    </form>
+    <div class="calcs-bottom"></div>
+</div>                            </div>
+                            <div class="tabs-panel" id="panel3v">
+                                <div id="cost-of-loan" class="calcs" data-calculator-cost-of-loans>
+    <div class="calcs-top"></div>
+    <form class="tighter">
+        <fieldset>
+            <legend class="screen-reader-text">Cost of Loan</legend>
+            <div class="field">
+                <label for="calc_col_principal">Principal in Dollars</label>
+                <div class="input-group">
+                    <span class="input-group-label">$</span>
+                    <input type="text" class="input-group-field" name="principal" id="calc_col_principal">
+                </div>
+            </div>
+            <div class="field">
+                <label for="calc_col_interest">Interest Rate %</label>
+                <div class="input-group">
+                    <input type="text" class="input-group-field" name="interest" id="calc_col_interest">
+                    <span class="input-group-label">%</span>
+                </div>
+            </div>
+            <p>
+                <label for="calc_col_term">Loan Term in Years</label>
+                <input type="text" name="term" id="calc_col_term">
+            </p>
+            <div class="calc-results hidden">
+                <p>
+                    <label for="calc_col_monthly">Monthly Payment</label>
+                    <input type="text" name="monthly" id="calc_col_monthly" readonly="readonly">
+                </p>
+                <p>
+                    <label for="calc_col_cost">Total Cost of Loan</label>
+                    <input type="text" name="cost" id="calc_col_cost" readonly="readonly">
+                </p>
+            </div>
+            <p class="calcs-buts panel clearfix">
+                <button class="button primary" type="submit">Calculate</button>
+                <button class="button hollow alert float-right" type="reset">Reset</button>
+            </p>
+        </fieldset>
+    </form>
+    <div class="calcs-bottom"></div>
+</div>                            </div>
+                            <div class="tabs-panel" id="panel4v">
+                                <div id="cost-of-mortgage" class="calcs" data-calculator-cost-of-mortgage >
+    <div class="calcs-top"></div>
+    <form class="tighter">
+        <fieldset>
+            <legend class="screen-reader-text">Cost of Mortgage</legend>
+            <div class="field">
+                <label for="calc_com_principal">Principal in Dollars</label>
+                <div class="input-group">
+                    <span class="input-group-label">$</span>
+                    <input type="text" class="input-group-field" name="principal" id="calc_com_principal">
+                </div>
+            </div>
+            <div class="field">
+                <label for="calc_com_interest">Interest Rate %</label>
+                <div class="input-group">
+                    <input type="text" class="input-group-field" name="interest" id="calc_com_interest">
+                    <span class="input-group-label">%</span>
+                </div>
+            </div>
+            <p>
+                <label for="calc_com_term">Mortgage Term in Years</label>
+                <input type="text" name="term" id="calc_com_term">
+            </p>
+            <div class="calc-results hidden">
+                <p>
+                    <label for="calc_com_monthly">Monthly Payment</label>
+                    <input type="text" name="monthly" id="calc_com_monthly" readonly="readonly">
+                </p>
+                <p>
+                    <label for="calc_com_mortgage">Total Cost of Mortgage</label>
+                    <input type="text" name="mortgage" id="calc_com_mortgage" readonly="readonly">
+                </p>
+            </div>
+            <p class="calcs-buts panel clearfix">
+                <button class="button primary" type="submit">Calculate</button>
+                <button class="button hollow alert float-right" type="reset">Reset</button>
+            </p>
+        </fieldset>
+    </form>
+    <div class="calcs-bottom"></div>
+</div>                            </div>
+                            <div class="tabs-panel" id="panel5v">
+                                <div id="retirement-savings" class="calcs" data-calculator-retirement-savings>
+    <div class="calcs-top"></div>
+    <form class="tighter">
+        <fieldset>
+            <legend class="screen-reader-text">Retirement Savings</legend>
+            <div class="field">
+                <label for="calc_rs_income">Desired annual income in retirement</label>
+                <div class="input-group">
+                    <span class="input-group-label">$</span>
+                    <input type="text" class="input-group-field" name="income" id="calc_rs_income">
+                </div>
+            </div>
+            <div class="field">
+                <label for="calc_rs_benefits">Expected annual Social Security benefits</label>
+                <div class="input-group">
+                    <span class="input-group-label">$</span>
+                    <input type="text" class="input-group-field" name="benefits" id="calc_rs_benefits">
+                </div>
+            </div>
+            <div class="field">
+                <label for="calc_rs_pension">Expected annual pension, if any</label>
+                <div class="input-group">
+                    <span class="input-group-label">$</span>
+                    <input type="text" class="input-group-field" name="pension" id="calc_rs_pension">
+                </div>
+            </div>
+            <div class="calc-results hidden">
+                <p>
+                    <label for="calc_rs_income-needed">Annual income needed from investments</label>
+                    <input type="text" name="income-needed" id="calc_rs_income-needed" readonly="readonly">
+                </p>
+                <p>
+                    <label for="calc_rs_amount">Total amount you need to have invested</label>
+                    <input type="text" name="amount" id="calc_rs_amount" readonly="readonly">
+                </p>
+            </div>
+            <p class="calcs-buts panel clearfix">
+                <button class="button primary" type="submit">Calculate</button>
+                <button class="button hollow alert float-right" type="reset">Reset</button>
+            </p>
+        </fieldset>
+    </form>
+    <div class="calcs-bottom"></div>
+</div>                            </div>
+                            <div class="tabs-panel" id="panel6v">
+                                <div id="credit-calculator" class="calcs" data-calculator-credit-calculator>
+    <div class="calcs-top"></div>
+    <form class="tighter">
+        <fieldset>
+            <legend class="screen-reader-text">Credit Calculator</legend>
+            <div class="field">
+                <label for="calc_cc_borrowed">Amount Borrowed</label>
+                <div class="input-group">
+                    <span class="input-group-label">$</span>
+                    <input type="text" class="input-group-field" name="borrowed" id="calc_cc_borrowed">
+                </div>
+            </div>
+            <div class="field">
+                <label for="calc_cc_rate">Annual % rate</label>
+                <div class="input-group">
+                    <input type="text" class="input-group-field" name="rate" id="calc_cc_rate">
+                    <span class="input-group-label">%</span>
+                </div>
+            </div>
+            <div class="field">
+                <label for="calc_cc_payment">Monthly Payment</label>
+                <div class="input-group">
+                    <span class="input-group-label">$</span>
+                    <input type="text" class="input-group-field" name="payment" id="calc_cc_payment">
+                </div>
+            </div>
+            <div class="calc-results hidden">
+                <p>
+                    <label for="calc_cc_months">Months to Pay</label>
+                    <input type="text" name="months" id="calc_cc_months" readonly="readonly">
+                </p>
+                <p>
+                    <label for="calc_cc_amount">Total Amount paid</label>
+                    <input type="text" name="amount" id="calc_cc_amount" readonly="readonly">
+                </p>
+                <p>
+                    <label for="calc_cc_interest">Total Interest paid</label>
+                    <input type="text" name="interest" id="calc_cc_interest" readonly="readonly">
+                </p>
+            </div>
+            <p class="calcs-buts panel clearfix">
+                <button class="button primary" type="submit">Calculate</button>
+                <button class="button hollow alert float-right" type="reset">Reset</button>
+            </p>
+        </fieldset>
+    </form>
+    <div class="calcs-bottom"></div>
+</div>                            </div>
+                            <div class="tabs-panel" id="panel7v">
+                                <div id="rule-72-calculator" class="calcs" data-calculator-rule-seventy-two-calculators>
+    <div class="calcs-top"></div>
+    <form class="tighter">
+        <fieldset>
+            <legend class="screen-reader-text">Rule of 72</legend>
+            <fieldset class="radios">
+                <legend>Solve for</legend>
+                <input type="radio" value="interest" name="solve" id="calc_r72_solve1"><label for="calc_r72_solve1">Interest</label>
+                <input type="radio" value="term" name="solve" id="calc_r72_solve2" checked=""><label for="calc_r72_solve2">Term</label>
+            </fieldset>
+            <div class="field">
+                <label for="calc_r72_interest-rate">Interest %</label>
+                <div class="input-group">
+                    <input type="text" class="input-group-field" readonly="readonly" name="interest" id="calc_r72_interest-rate">
+                    <span class="input-group-label">%</span>
+                </div>
+            </div>
+            <p>
+                <label for="calc_r72_term-years">Term in Years</label>
+                <input type="text" id="calc_r72_term-years" name="term">
+            </p>
+            <p class="calcs-buts panel clearfix">
+                <button class="button primary" type="submit">Calculate</button>
+                <button class="button hollow alert float-right" type="reset">Reset</button>
+            </p>
+        </fieldset>
+    </form>
+    <div class="calcs-bottom"></div>
+</div>                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a class="show-on-focus" href="#mainContent">Skip to Content</a>
+        <div class="off-canvas position-right" id="offCanvasRight" data-off-canvas>
+    <div class="off-canvas-wrap">
+        <div class="off-canvas-side">
+            <button class="close-button" aria-label="Close menu" type="button" data-close="">
+                <span aria-hidden="true">close</span>
+            </button>
+        </div>
+            <nav>
+<ul class="nav-mobile-main vertical menu drilldown"
+    data-drilldown
+    data-animate-height="true"
+    data-auto-height="true">
+            <li class=" menu-item menu-item-type-post_type_archive menu-item-object-hob_category menu-item-386 menu-item-has-children">
+            <a href="https://handsonbanking.org/categories/">Categories</a>
+                <ul class="menu vertical nested">
+            <li class="drilldown-clone  menu-item menu-item-type-post_type_archive menu-item-object-hob_category menu-item-386 menu-item-has-children">
+                <a href="https://handsonbanking.org/categories/">Categories</a>
+            </li>
+                            <li class=" menu-item menu-item-type-post_type menu-item-object-hob_category menu-item-387">
+                    <a href="https://handsonbanking.org/categories/getting-started/">Getting Started</a>
+                </li>
+                            <li class=" menu-item menu-item-type-post_type menu-item-object-hob_category menu-item-388">
+                    <a href="https://handsonbanking.org/categories/managing-day-to-day/">Managing Day-To-Day</a>
+                </li>
+                            <li class=" menu-item menu-item-type-post_type menu-item-object-hob_category menu-item-389">
+                    <a href="https://handsonbanking.org/categories/planning-for-the-future/">Preparing for the Future</a>
+                </li>
+                            <li class=" menu-item menu-item-type-post_type menu-item-object-hob_category menu-item-390">
+                    <a href="https://handsonbanking.org/categories/preparing-for-a-rainy-day/">Preparing for a Rainy Day</a>
+                </li>
+                            <li class=" menu-item menu-item-type-post_type menu-item-object-hob_category menu-item-391">
+                    <a href="https://handsonbanking.org/categories/preparing-for-tomorrow/">Preparing for Tomorrow</a>
+                </li>
+                            <li class=" menu-item menu-item-type-post_type menu-item-object-hob_category menu-item-3289">
+                    <a href="https://handsonbanking.org/categories/youth/">Resources for Youth</a>
+                </li>
+                            <li class=" menu-item menu-item-type-post_type menu-item-object-hob_category menu-item-7942">
+                    <a href="https://handsonbanking.org/categories/resources-for-military/">Resources for Military</a>
+                </li>
+                    </ul>
+        </li>
+            <li class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-7545">
+            <a href="https://handsonbanking.org/topics/">Topics</a>
+        </li>
+            <li class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-7552">
+            <a href="https://handsonbanking.org/resources/">Resources</a>
+        </li>
+            <li class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-8067">
+            <a href="https://handsonbanking.org/volunteers/">Practitioners / Volunteers</a>
+        </li>
+</ul>
+<div class="nav-mobil-utility">
+            <ul class="menu"  >
+                                    <li class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-5577">
+                    <a class="nav-main-link" href="https://youth.handsonbanking.org/">Hands on Banking for Youth</a>
+                </li>
+                            <li class="lang-item lang-item-5 lang-item-es lang-item-first menu-item menu-item-type-custom menu-item-object-custom menu-item-138-es">
+                    <a class="nav-main-link" href="https://handsonbanking.org/es/resources/todo-sobre-gasto/">Español</a>
+                </li>
+                            <li class="show-for-large menu-item menu-item-type-post_type menu-item-object-page menu-item-137">
+                    <a class="nav-main-link" href="https://handsonbanking.org/sitemap/">Sitemap</a>
+                </li>
+                        </ul>
+</div>
+            </nav>
+    </div>
+</div>
+        <div class="off-canvas-content" data-off-canvas-content>
+                        <div class="site-header-utility hide-for-print" >
+                <div class="grid-container">
+                    <div class="grid-x grid-padding-x">
+                        <div class="cell auto">
+                            <nav class="nav-utility-wrap" aria-label="Utility Navigation">
+<div class="nav-utility">
+            <ul class="menu"  >
+                                    <li class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-5577">
+                    <a class="nav-main-link" href="https://youth.handsonbanking.org/">Hands on Banking for Youth</a>
+                </li>
+                            <li class="lang-item lang-item-5 lang-item-es lang-item-first menu-item menu-item-type-custom menu-item-object-custom menu-item-138-es">
+                    <a class="nav-main-link" href="https://handsonbanking.org/es/resources/todo-sobre-gasto/">Español</a>
+                </li>
+                            <li class="show-for-large menu-item menu-item-type-post_type menu-item-object-page menu-item-137">
+                    <a class="nav-main-link" href="https://handsonbanking.org/sitemap/">Sitemap</a>
+                </li>
+                        </ul>
+</div>
+                                <a class="nav-link nav-utility-search nav-search show-for-large"
+                                   data-open="search-dropdown-wrap"
+                                   href="#search-dropdown-wrap"
+                                >Search</a>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="reveal search-dropdown-wrap"
+                 id="search-dropdown-wrap"
+                 data-reveal
+                 aria-modal="true">
+                <div class="search-dropdown">
+                    <div class="grid-container">
+                        <div class="grid-x grid-margin-x">
+                            <div class="cell medium-12 text-center">
+                                <button class="nav-link"
+                                        data-toggle="search-dropdown search-dropdown-wrap"
+                                        onclick="return false;"><i class="icon-cross"></i> close</button>
+                            </div>
+                            <div class="cell medium-8 medium-offset-2">
+                                <div itemscope itemtype="http://schema.org/WebSite">
+    <link itemprop="url" href="https://handsonbanking.org/"/>
+    <form role="search" method="get" id="searchform-1253874" action="https://handsonbanking.org/" itemprop="potentialAction" itemscope
+          itemtype="http://schema.org/SearchAction">
+        <meta itemprop="target" content="https://handsonbanking.org/?s={s}"/>
+        <label class="site-search-label" for="s-1253874">Search</label>
+        <div class="form-overlap-submit">
+            <input type="text" itemprop="query-input" class="search-input" value=""
+                   name="s" id="s-1253874" placeholder="Search">
+            <input type="submit" class="search-submit button" id="searchsubmit-1253874" value="Search">
+        </div>
+    </form>
+</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <header class="site-header ">
+                <div class="grid-container">
+                    <div class="grid-x grid-padding-x">
+                        <div class="cell small-6 medium-5 large-5 print-hide-hrefs">
+                            <a class="brand" href="https://handsonbanking.org/">
+                                                                    <img src="https://handsonbanking.org/wp-content/uploads/2020/04/hob-logo-full-1.svg" alt="Hands on Banking Money Skills you need for life" style="width:320px;"  >
+                                                            </a>
+                        </div>
+                        <div class="cell small-6 medium-7 hide-for-large hide-for-print">
+                            <div class="nav-primary-mobile">
+                                <a id="search-dropdown-mobile"
+                                   class="search-dropdown-mobile nav-search"
+                                   data-open="search-dropdown-wrap"
+                                   href="#search-dropdown-wrap"
+                                   >Search</a>
+                                <button
+                                   href="#menu"
+                                   class="menu-toggle"
+                                   data-open="offCanvasRight">Menu</button>
+                            </div>
+                        </div>
+                        <div class="cell large-7 show-for-large hide-for-print">
+                            <nav class="nav-main-wrapper" aria-label="Main Navigation">
+<div class="nav-main">
+    <ul class="dropdown menu" data-dropdown-menu>
+                    <li class=" menu-item menu-item-type-post_type_archive menu-item-object-hob_category menu-item-386 menu-item-has-children menu-level-1">
+                <a class="nav-main-link menu-level-1" href="https://handsonbanking.org/categories/">Categories</a>
+                                <ul>
+                                    <li class="menu-level-2">
+                        <a href="https://handsonbanking.org/categories/getting-started/" class="menu-level-2">Getting Started</a>
+                    </li>
+                                    <li class="menu-level-2">
+                        <a href="https://handsonbanking.org/categories/managing-day-to-day/" class="menu-level-2">Managing Day-To-Day</a>
+                    </li>
+                                    <li class="menu-level-2">
+                        <a href="https://handsonbanking.org/categories/planning-for-the-future/" class="menu-level-2">Preparing for the Future</a>
+                    </li>
+                                    <li class="menu-level-2">
+                        <a href="https://handsonbanking.org/categories/preparing-for-a-rainy-day/" class="menu-level-2">Preparing for a Rainy Day</a>
+                    </li>
+                                    <li class="menu-level-2">
+                        <a href="https://handsonbanking.org/categories/preparing-for-tomorrow/" class="menu-level-2">Preparing for Tomorrow</a>
+                    </li>
+                                    <li class="menu-level-2">
+                        <a href="https://handsonbanking.org/categories/youth/" class="menu-level-2">Resources for Youth</a>
+                    </li>
+                                    <li class="menu-level-2">
+                        <a href="https://handsonbanking.org/categories/resources-for-military/" class="menu-level-2">Resources for Military</a>
+                    </li>
+                            </ul>
+            </li>
+                    <li class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-7545 menu-level-1">
+                <a class="nav-main-link menu-level-1" href="https://handsonbanking.org/topics/">Topics</a>
+            </li>
+                    <li class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-7552 menu-level-1">
+                <a class="nav-main-link menu-level-1" href="https://handsonbanking.org/resources/">Resources</a>
+            </li>
+                    <li class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-8067 menu-level-1">
+                <a class="nav-main-link menu-level-1" href="https://handsonbanking.org/volunteers/">Practitioners / Volunteers</a>
+            </li>
+            </ul>
+</div>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </header>
+                            <nav aria-label="You are here:" role="navigation" class="menu-breadcrumbs">
+    <div class="grid-container">
+        <div class="grid-x grid-margin-x">
+            <div class="cell">
+                                                                    <ul class="breadcrumbs">
+                        <li class="menu-breadcrumbs-home-link"><a href="https://handsonbanking.org/">Home</a></li>
+                        <li><a href="https://handsonbanking.org/resources/">Resources</a></li>
+                        <li>All About Spending</li>
+                    </ul>
+                                            </div>
+        </div>
+    </div>
+</nav>
+                <div class="site-page">
+        <main class="site-main " id="mainContent" >
+            <article class="entry-article">
+                <header class="entry-header page-content-header lead " aria-label="Page Header">
+        <div class="grid-container">
+            <div class="grid-x grid-margin-x">
+                <div class="cell large-8">
+                                        <h1 class="post-title">All About Spending</h1>
+                                    </div>
+            </div>
+        </div>
+    </header>
+                 <section class="entry-body post-content align">
+<h2 class="wp-block-heading headline-indented has-kb-palette-12-color has-text-color" id="what-is-a-spending-plan" style="font-size:22px;line-height:2.5"><strong>What is a spending plan?</strong></h2>
+<figure class="wp-block-embed is-type-video is-provider-vimeo wp-block-embed-vimeo wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<iframe loading="lazy" src="https://player.vimeo.com/video/420691942?app_id=122963" width="500" height="281" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"></iframe>
+</div></figure>
+<div class="wp-block-kadence-accordion alignnone"><div class="kt-accordion-wrap kt-accordion-id839_a5f7df-19 kt-accordion-has-2-panes kt-active-pane-0 kt-accordion-block kt-pane-header-alignment-left kt-accodion-icon-style-arrow kt-accodion-icon-side-right" style="max-width:none"><div class="kt-accordion-inner-wrap" data-allow-multiple-open="false" data-start-open="none">
+<div class="wp-block-kadence-pane kt-accordion-pane kt-accordion-pane-1 kt-pane839_3e12e4-3b"><div class="kt-accordion-header-wrap"><button class="kt-blocks-accordion-header kt-acccordion-button-label-show"><span class="kt-blocks-accordion-title-wrap"><span class="kt-blocks-accordion-title">Transcript</span></span><span class="kt-blocks-accordion-icon-trigger"></span></button></div><div class="kt-accordion-panel kt-accordion-panel-hidden"><div class="kt-accordion-panel-inner">
+<p style="font-size:12px">A spending plan is a simple strategy for making the most of your money and reaching your financial goals.</p>
+<p style="font-size:12px">How do you create a spending plan? On a simple, one-page form you write down the money you have coming in and what you spend in an average month. Putting it down on paper helps you see where you can improve and make better money decisions.</p>
+<p style="font-size:12px">Some people call this making a “budget.” But we happen to like the term “spending plan” a lot better. Because it’s a good reminder that how you spend, and how much you spend, is really up to you.</p>
+<p style="font-size:12px">A spending plan can help you live within your means. Having a lifestyle that you can afford.&nbsp; Not spending money faster than you earn it and not borrowing more money than you can afford to repay.</p>
+<p style="font-size:12px">The right spending plan can help you set aside enough to pay your bills, have some savings for emergencies, and some money left over in your pocket every month.</p>
+</div></div></div>
+</div></div></div>
+<p></p>
+<p>If the words “spending plan” sound scary, or like too much work, don’t panic. A spending plan helps you get control over your money and spending. It’s actually simple: your spending plan can help you set aside enough to pay your bills and save for emergencies and for your long-term goals. A Spending Plan:</p>
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-layout-1 wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+<ul>
+<li>Becomes your personal strategy</li>
+<li>Can be a simple document or form</li>
+<li>Helps you live within your means</li>
+</ul>
+</div>
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+<ul>
+<li>Helps you avoid too much debt</li>
+<li>Helps you pay your bills</li>
+<li>Highlights your savings and money to spend</li>
+</ul>
+</div>
+</div>
+<p>Having a written spending plan can help you make better money decisions. Try putting it down on paper or recording it online so you can review and make regular adjustments.</p>
+<p><strong>Remember</strong>:<em>&nbsp;How</em>&nbsp;you spend, and how&nbsp;<em>much</em>&nbsp;you spend, is really up to you.</p>
+<div class="wp-block-kadence-spacer aligncenter kt-block-spacer-839_0f20f7-bf"><div class="kt-block-spacer kt-block-spacer-halign-center"><hr class="kt-divider"/></div></div>
+<h2 class="wp-block-heading headline-indented has-kb-palette-12-color has-text-color" id="what-you-need-to-know-about-a-spending-plan" style="font-size:22px;line-height:2.5"><strong>What you need to know about a spending plan</strong></h2>
+<div class="wp-block-kadence-accordion alignnone"><div class="kt-accordion-wrap kt-accordion-id839_5d4f66-3f kt-accordion-has-3-panes kt-active-pane-0 kt-accordion-block kt-pane-header-alignment-left kt-accodion-icon-style-arrow kt-accodion-icon-side-right" style="max-width:none"><div class="kt-accordion-inner-wrap" data-allow-multiple-open="false" data-start-open="none">
+<div class="wp-block-kadence-pane kt-accordion-pane kt-accordion-pane-1 kt-pane839_56c5d6-fd"><div class="kt-accordion-header-wrap"><button class="kt-blocks-accordion-header kt-acccordion-button-label-show"><span class="kt-blocks-accordion-title-wrap"><span class="kt-blocks-accordion-title">Know where your money is coming from: Types of Income</span></span><span class="kt-blocks-accordion-icon-trigger"></span></button></div><div class="kt-accordion-panel kt-accordion-panel-hidden"><div class="kt-accordion-panel-inner">
+<p>Be sure to record all your sources of income — your Social Security payments, retirement plan withdrawals, investment dividends, etc. And, if you’re working, don’t forget your take-home income. Base your spending plan on all your income sources.</p>
+<p>Remember that there’s a difference between your income — the total amount you earn — and your take-home pay, or net income. Net income is the amount of money earned after taxes, insurance, or other costs have been subtracted. Base your spending plan on your take-home pay. Remember to take your base pay, basic allowance for housing (BAH), special duty pay, and basic allowance for subsistence (BAS) into account when considering your total income.</p>
+</div></div></div>
+<div class="wp-block-kadence-pane kt-accordion-pane kt-accordion-pane-2 kt-pane839_1b53e0-12"><div class="kt-accordion-header-wrap"><button class="kt-blocks-accordion-header kt-acccordion-button-label-show"><span class="kt-blocks-accordion-title-wrap"><span class="kt-blocks-accordion-title">Know where your money is going: Tracking</span></span><span class="kt-blocks-accordion-icon-trigger"></span></button></div><div class="kt-accordion-panel kt-accordion-panel-hidden"><div class="kt-accordion-panel-inner">
+<p>Not sure where your money’s going? To get a clear picture of how you actually spend right now, it may help to keep a spending diary for a month or two. It’s easy to keep track of your spending: keep your receipts and review your monthly statements. This means saving your receipts and writing down the items and amounts for everything you spend. Check with your financial institution or credit card company to see if they offer free online tools to track and categorize your spending.</p>
+</div></div></div>
+<div class="wp-block-kadence-pane kt-accordion-pane kt-accordion-pane-3 kt-pane839_820f5b-9b"><div class="kt-accordion-header-wrap"><button class="kt-blocks-accordion-header kt-acccordion-button-label-show"><span class="kt-blocks-accordion-title-wrap"><span class="kt-blocks-accordion-title">Know what types of expenses you have:</span></span><span class="kt-blocks-accordion-icon-trigger"></span></button></div><div class="kt-accordion-panel kt-accordion-panel-hidden"><div class="kt-accordion-panel-inner">
+<p><strong>Types of expenses</strong> </p>
+<p>There are three types of expenses: fixed, flexible, and discretionary. It’s important to know the difference among the three.<br><br><span class="has-inline-color has-kb-palette-14-color"><strong>Fixed expenses</strong>&nbsp;</span>are regular amounts that generally don’t change much. They can be monthly expenses like rent or car payments. Or they can be bills you receive less frequently, like car registration or insurance.<br><br><strong><span class="has-inline-color has-kb-palette-14-color">Flexible expenses</span></strong>&nbsp;also happen on a regular basis and are also for necessities. But, with flexible expenses you have more control over how much you spend. For example, how much you spend on groceries or how many long distance phone calls you make in a month.<br><br>Finally, there are the expenses you have the most control over. These are called&nbsp;<strong><span class="has-inline-color has-kb-palette-14-color">discretionary expenses</span></strong>. This is the money you choose to spend, but don’t necessarily have to spend on things like clothes, movies, and going out to eat. Another important discretionary expense is savings. It’s up to you to decide how much of your money you’re going to set aside for your future.</p>
+</div></div></div>
+</div></div></div>
+<div class="wp-block-image">
+<figure class="aligncenter size-large is-resized"><img loading="lazy" decoding="async" width="152" height="152" src="https://handsonbanking.org/wp-content/uploads/2020/05/wallet_gray.png" alt="gray and white wallet" class="wp-image-922" style="width:136px;height:136px"/></figure></div>
+<div class="wp-block-kadence-spacer aligncenter kt-block-spacer-839_abcbe4-61"><div class="kt-block-spacer kt-block-spacer-halign-center"><hr class="kt-divider"/></div></div>
+<h2 class="wp-block-heading headline-indented has-kb-palette-12-color has-text-color" id="my-spending-plan" style="font-size:22px;line-height:2.5">my spending plan</h2>
+<div class="wp-block-group is-layout-flow wp-block-group-is-layout-flow"><div class="wp-block-group__inner-container">
+<div class="wp-block-file card-download"><a id="wp-block-file--media-eb46493c-8632-491e-bb8b-fc8be59a8be9" href="https://handsonbanking.org/wp-content/uploads/documents/HandsonBanking_MoneyManagement_AllAboutSpending_MySpendingPlan.pdf" target="_blank" rel="noreferrer noopener">Download My Spending Plan (PDF)</a></div>
+</div></div>
+<div class="wp-block-kadence-spacer aligncenter kt-block-spacer-839_7cd54f-1c"><div class="kt-block-spacer kt-block-spacer-halign-center"><hr class="kt-divider"/></div></div>
+<h2 class="wp-block-heading headline-indented has-kb-palette-12-color has-text-color" id="you-have-a-spending-plan-now-what" style="font-size:22px;line-height:2.5"><strong>You have a spending plan… now what?</strong></h2>
+<p>After writing your spending plan, you may find that there’s not enough money to go around. Be realistic and flexible. The goal is to spend less than you make so you still have some money left over for other things you want to do.</p>
+<p>Since your fixed expenses may be difficult to change, look for ways to decrease your flexible and discretionary expenses and/or increase your income.</p>
+<div class="wp-block-kadence-tabs alignnone"><div class="kt-tabs-wrap kt-tabs-id839_992920-e5 kt-tabs-has-3-tabs kt-active-tab-1 kt-tabs-layout-tabs kt-tabs-tablet-layout-inherit kt-tabs-mobile-layout-accordion kt-tab-alignment-left kt-create-accordion"><ul class="kt-tabs-title-list"><li id="tab-strongmaketrade-offsstrong" class="kt-title-item kt-title-item-1 kt-tabs-svg-show-always kt-tabs-icon-side-right kt-tab-title-active"><a href="#tab-strongmaketrade-offsstrong" data-tab="1" class="kt-tab-title kt-tab-title-1 "><span class="kt-title-text"><strong>Make trade-offs</strong></span></a></li><li id="tab-strongdecidehowmuchtosavestrong" class="kt-title-item kt-title-item-2 kt-tabs-svg-show-always kt-tabs-icon-side-right kt-tab-title-inactive"><a href="#tab-strongdecidehowmuchtosavestrong" data-tab="2" class="kt-tab-title kt-tab-title-2 "><span class="kt-title-text"><strong>Decide how much to save</strong></span></a></li><li id="tab-strongdecidingwhattopayfirststrong" class="kt-title-item kt-title-item-3 kt-tabs-svg-show-always kt-tabs-icon-side-right kt-tab-title-inactive"><a href="#tab-strongdecidingwhattopayfirststrong" data-tab="3" class="kt-tab-title kt-tab-title-3 "><span class="kt-title-text"><strong>Deciding what to pay first</strong></span></a></li></ul><div class="kt-tabs-content-wrap">
+<div class="wp-block-kadence-tab kt-tab-inner-content kt-inner-tab-1 kt-inner-tab_75db9f-c0"><div class="kt-tab-inner-content-inner">
+<p>Most people can’t afford everything they want to buy, so they have to make trade-offs. Making trade-offs may mean giving up things you can do without, or buying something less expensive that still meets your needs, in order to afford the things that are most valuable to you. The idea of making trade-offs may also relate to how you spend your time. For example, to make more money at your job, you may have to work more hours.</p>
+</div></div>
+<div class="wp-block-kadence-tab kt-tab-inner-content kt-inner-tab-2 kt-inner-tab_23d0b1-9c"><div class="kt-tab-inner-content-inner">
+<p>Savings is a discretionary expense because it’s up to you to decide how much of your money you’re going to set aside for your future. Each month as you pay everyone else for things you need and want, don’t forget to “pay yourself” by saving.</p>
+</div></div>
+<div class="wp-block-kadence-tab kt-tab-inner-content kt-inner-tab-3 kt-inner-tab_e044a3-54"><div class="kt-tab-inner-content-inner">
+<p>To make your monthly income last, pay for things in this order.</p>
+<ol>
+<li>Pay your monthly bills. There are many potential penalties if you pay late, such as late fees, losing possession of things you’ve bought on credit, even being evicted from an apartment!</li>
+<li>Set aside the money you’ll need for your weekly and day-to-day expenses, like groceries and bus fare.</li>
+<li>Put money into savings. Try to build an emergency fund that can cover at least 3-6 months of expenses.</li>
+<li>Set aside money for larger expenses you know are coming, such as car repairs or appliances.</li>
+<li>Set aside money for your major future goals whether it’s a home, college for your children, a new car, or travel.</li>
+</ol>
+</div></div>
+</div></div></div>
+<p><br><strong>Remember:</strong> Paying bills late can seriously damage your future ability to borrow.  If you begin to earn more, increase the amount you save as much as you can.</p>
+<div class="wp-block-kadence-spacer aligncenter kt-block-spacer-839_a9d066-12"><div class="kt-block-spacer kt-block-spacer-halign-center"><hr class="kt-divider"/></div></div>
+<h2 class="wp-block-heading headline-indented has-kb-palette-12-color has-text-color" id="spending-habits-checklist" style="font-size:22px;line-height:2.5">spending habits checklist</h2>
+<div class="wp-block-file card-download"><a id="wp-block-file--media-1166f68f-1011-49fa-be35-b82cad5a3901" href="https://handsonbanking.org/wp-content/uploads/documents/HandsonBanking_MoneyManagement_SpendingHabitsChecklist.pdf" target="_blank" rel="noreferrer noopener">Download Spending Habits Checklist (PDF)</a></div>
+<div class="wp-block-image">
+<figure class="aligncenter size-large is-resized"><img loading="lazy" decoding="async" width="172" height="170" src="https://handsonbanking.org/wp-content/uploads/2020/06/shoppingbags_blue_small.png" alt="" class="wp-image-2390" style="width:102px;height:101px"/></figure></div>
+<div class="wp-block-kadence-spacer aligncenter kt-block-spacer-839_fed052-22"><div class="kt-block-spacer kt-block-spacer-halign-center"><hr class="kt-divider"/></div></div>
+<h2 class="wp-block-heading headline-indented has-kb-palette-12-color has-text-color" id="decrease-your-expenses" style="font-size:22px;line-height:2.5">decrease your expenses</h2>
+<p>Do you find yourself running short on cash month-to-month? The solution is easy to identify but may be challenging to execute; increase your income and/or decrease your expenses. Here are helpful tips for decreasing the expense side of your money picture:</p>
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-layout-2 wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+<div class="wp-block-kadence-accordion alignnone"><div class="kt-accordion-wrap kt-accordion-id839_8aed7b-a5 kt-accordion-has-8-panes kt-active-pane-0 kt-accordion-block kt-pane-header-alignment-left kt-accodion-icon-style-arrow kt-accodion-icon-side-left" style="max-width:none"><div class="kt-accordion-inner-wrap" data-allow-multiple-open="false" data-start-open="none">
+<div class="wp-block-kadence-pane kt-accordion-pane kt-accordion-pane-1 kt-pane839_33e53d-e1"><div class="kt-accordion-header-wrap"><button class="kt-blocks-accordion-header kt-acccordion-button-label-show"><span class="kt-blocks-accordion-title-wrap"><span class="kt-blocks-accordion-title">Track your spending</span></span><span class="kt-blocks-accordion-icon-trigger"></span></button></div><div class="kt-accordion-panel kt-accordion-panel-hidden"><div class="kt-accordion-panel-inner">
+<p>To get a clear picture of how you actually spend right now, it may help to keep a spending diary for a month or two. This means saving your receipts and writing down the items and amounts for everything you spend. If you primarily use a debit or credit card, you can also review the last 2-3 months of statements.</p>
+</div></div></div>
+<div class="wp-block-kadence-pane kt-accordion-pane kt-accordion-pane-2 kt-pane839_c7deec-5c"><div class="kt-accordion-header-wrap"><button class="kt-blocks-accordion-header kt-acccordion-button-label-show"><span class="kt-blocks-accordion-title-wrap"><span class="kt-blocks-accordion-title">Pay your bills on time</span></span><span class="kt-blocks-accordion-icon-trigger"></span></button></div><div class="kt-accordion-panel kt-accordion-panel-hidden"><div class="kt-accordion-panel-inner">
+<ul id="block-3e6f8739-5034-4cff-a512-3292a93989e9" class="is-style-default">
+<li>When you pay your bills on time, you avoid:
+<ul>
+<li>Late fees</li>
+<li>Extra finance charges</li>
+<li>Disconnection of (and re-connection fees for) phone, electricity, or other services</li>
+<li>The cost of eviction</li>
+<li>Repossession of cars or other items</li>
+<li>Bill collectors</li>
+</ul>
+</li>
+</ul>
+</div></div></div>
+<div class="wp-block-kadence-pane kt-accordion-pane kt-accordion-pane-3 kt-pane839_1a0335-b3"><div class="kt-accordion-header-wrap"><button class="kt-blocks-accordion-header kt-acccordion-button-label-show"><span class="kt-blocks-accordion-title-wrap"><span class="kt-blocks-accordion-title">Reduce fees and interest payments</span></span><span class="kt-blocks-accordion-icon-trigger"></span></button></div><div class="kt-accordion-panel kt-accordion-panel-hidden"><div class="kt-accordion-panel-inner">
+<ul>
+<li>Avoid overdrafts! Ask your bank about overdraft protection.</li>
+<li>Whenever possible, use ATMs where you won’t incur a fee. Ask your bank about free ATM access.</li>
+<li>Steer clear of high-cost check cashing stores, payday loans, and credit card cash advances.</li>
+<li>If you have debts, pay off your highest interest accounts first.</li>
+</ul>
+</div></div></div>
+<div class="wp-block-kadence-pane kt-accordion-pane kt-accordion-pane-4 kt-pane839_768d1e-4e"><div class="kt-accordion-header-wrap"><button class="kt-blocks-accordion-header kt-acccordion-button-label-show"><span class="kt-blocks-accordion-title-wrap"><span class="kt-blocks-accordion-title">Be a savvy shopper</span></span><span class="kt-blocks-accordion-icon-trigger"></span></button></div><div class="kt-accordion-panel kt-accordion-panel-hidden"><div class="kt-accordion-panel-inner">
+<ul>
+<li>When making a purchase, consider your needs. Resist impulse buying. Ask yourself what needs you’re trying to fill by making this purchase. Is this item something you want or truly need?</li>
+<li>Determine your budget. Decide how much you can spend on this purchase and still cover your other expenses.</li>
+<li>Research and inspect products before you buy. Determine when, how, and where to buy the item to get the most for your money.</li>
+<li>Comparison shop. Shop around by Internet, compare ads in the newspaper, shop by telephone, and look at catalogues, too. Call three stores to compare prices, models, warranties, and the store return policies. Be sure to confirm the price. Ask about any extra charges, like delivery.</li>
+<li>Watch for sales, coupons, and rebate offers to get the best price. Depending on the item and the store, you may be able to negotiate the price.</li>
+<li>Find the best overall value. Remember, your goal is value, not just the lowest price tag. Look for the features and quality you want, good customer service, a fair price, and a flexible return policy.</li>
+</ul>
+</div></div></div>
+<div class="wp-block-kadence-pane kt-accordion-pane kt-accordion-pane-5 kt-pane839_d599c3-2d"><div class="kt-accordion-header-wrap"><button class="kt-blocks-accordion-header kt-acccordion-button-label-show"><span class="kt-blocks-accordion-title-wrap"><span class="kt-blocks-accordion-title">Make Tradeoffs</span></span><span class="kt-blocks-accordion-icon-trigger"></span></button></div><div class="kt-accordion-panel kt-accordion-panel-hidden"><div class="kt-accordion-panel-inner">
+<p>Most people can’t afford everything they want to buy, so they have to make tradeoffs. Making tradeoffs may mean giving up things you can do without, or buying something less expensive that still meets your needs, in order to afford the things that are most valuable to you.</p>
+</div></div></div>
+<div class="wp-block-kadence-pane kt-accordion-pane kt-accordion-pane-6 kt-pane839_5d6d05-59"><div class="kt-accordion-header-wrap"><button class="kt-blocks-accordion-header kt-acccordion-button-label-show"><span class="kt-blocks-accordion-title-wrap"><span class="kt-blocks-accordion-title">Review Your Insurance</span></span><span class="kt-blocks-accordion-icon-trigger"></span></button></div><div class="kt-accordion-panel kt-accordion-panel-hidden"><div class="kt-accordion-panel-inner">
+<p>Review the types of insurance you have, your coverage and deductibles. Comparison shop with different insurance carriers. While you want to maintain adequate coverage, you may find ways to save. Ask your insurance carrier(s) about any discounts or special rates you may qualify for. For example:</p>
+<p><strong>Homeowners Insurance</strong></p>
+<ul id="block-0732ae88-6bfc-4b0b-954b-8ca270374417">
+<li>Can you receive a discount by adding smoke alarms or other protective devices?</li>
+<li>If the value of your home has depreciated since you purchased insurance, are you eligible for a rate reduction?</li>
+<li>If you are paying for Private Mortgage Insurance (PMI), check with your lender to see if you are currently required to have it.</li>
+<li>Find out if your insurance cost is based on the total value of your house and land. If so, you may be able to cut costs by paying rates based only on the value of the house.</li>
+</ul>
+<p><strong>Car Insurance</strong></p>
+<ul id="block-f6468774-8250-49bf-95e3-ec672df2d7c2">
+<li>Ask your agent about possible discounts. Many insurers offer reduced rates based on safe driving records, safety devices (alarms, airbags, etc.), non-smoking, and good grades (for high school and college students).</li>
+<li>Consider temporarily dropping or reducing any optional coverages until your financial situation is stronger.</li>
+</ul>
+<p></p>
+</div></div></div>
+<div class="wp-block-kadence-pane kt-accordion-pane kt-accordion-pane-7 kt-pane839_bb94c9-85"><div class="kt-accordion-header-wrap"><button class="kt-blocks-accordion-header kt-acccordion-button-label-show"><span class="kt-blocks-accordion-title-wrap"><span class="kt-blocks-accordion-title">Save on Transportation</span></span><span class="kt-blocks-accordion-icon-trigger"></span></button></div><div class="kt-accordion-panel kt-accordion-panel-hidden"><div class="kt-accordion-panel-inner">
+<ul>
+<li>Owning a car is a major expense, so consider whether you really need one. You can save a lot of money if you really don’t need a car or can manage to live without one. By not owning a car, you can avoid saving for a down payment, making monthly car loan payments, and all of the other expenses that go along with car ownership such as insurance, gas, maintenance, and repairs.</li>
+<li>Explore alternatives to car ownership. There might be cheaper ways of getting yourself from here to there. Consider taking public transportation or using ride sharing services if available in your area; getting a moped; or, riding in a carpool. If you can walk or ride your bike, you’ll save money and get some free exercise. Having one less car on the road cuts back on traffic and air pollution. Even if you don’t own a car, you can rent a car now and then when you need one.</li>
+<li>If you take public transportation, it may be less expensive to buy monthly pass than to pay by the ride.</li>
+<li>When driving, try to combine your errands into one trip. Plan your route to minimize your mileage.</li>
+<li>Keep your car in good working order. When a vehicle runs well, it costs less to use.</li>
+<li>If you currently use more than one vehicle, consider cutting back to just one.</li>
+</ul>
+</div></div></div>
+</div></div></div>
+</div>
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+<div class="wp-block-kadence-accordion alignnone"><div class="kt-accordion-wrap kt-accordion-id839_5f55c9-24 kt-accordion-has-7-panes kt-active-pane-0 kt-accordion-block kt-pane-header-alignment-left kt-accodion-icon-style-arrow kt-accodion-icon-side-left" style="max-width:none"><div class="kt-accordion-inner-wrap" data-allow-multiple-open="false" data-start-open="none">
+<div class="wp-block-kadence-pane kt-accordion-pane kt-accordion-pane-1 kt-pane839_2a624a-4f"><div class="kt-accordion-header-wrap"><button class="kt-blocks-accordion-header kt-acccordion-button-label-show"><span class="kt-blocks-accordion-title-wrap"><span class="kt-blocks-accordion-title">Get Frugal About Food</span></span><span class="kt-blocks-accordion-icon-trigger"></span></button></div><div class="kt-accordion-panel kt-accordion-panel-hidden"><div class="kt-accordion-panel-inner">
+<ul>
+<li>Save money by cutting back on restaurant meals.</li>
+<li>Make a grocery shopping list and bring it with you.</li>
+<li>Shop at discount or regular grocery stores vs. higher-priced quick stop stores.</li>
+<li>Meal plan based on sales, coupons, and grocery store circulars.</li>
+<li>Buy products you use frequently in large sizes or bulk quantities.</li>
+<li>Consider joining grocery store clubs. Membership may entitle you to discount prices.</li>
+<li>Buy lower-priced generic or store brand items when available.</li>
+<li>Avoid grocery shopping when you’re hungry.</li>
+<li>Limit your number of grocery shopping trips. This can help you reduce spending on impulse items.</li>
+<li>If you have school-age children, find out if your family qualifies for free or reduced-price school meals.</li>
+</ul>
+</div></div></div>
+<div class="wp-block-kadence-pane kt-accordion-pane kt-accordion-pane-2 kt-pane839_cb5fad-c0"><div class="kt-accordion-header-wrap"><button class="kt-blocks-accordion-header kt-acccordion-button-label-show"><span class="kt-blocks-accordion-title-wrap"><span class="kt-blocks-accordion-title">Economize on Utilities</span></span><span class="kt-blocks-accordion-icon-trigger"></span></button></div><div class="kt-accordion-panel kt-accordion-panel-hidden"><div class="kt-accordion-panel-inner">
+<ul>
+<li>Ask your utility companies about discount plans you may qualify for. Some offer budget billing and payment plans so that your utility bill is same amount every month. This can help you stabilize your spending.</li>
+<li>Vacuum vent registers and wall heaters at least once a year. Make sure that your furniture is not blocking them.</li>
+<li>Follow the manufacturer’s guidelines to use your furnace and water heater in a high efficiency manner.</li>
+<li>Reduce your water bill by using low-flow plumbing fixtures.</li>
+<li>Keep your home in good repair. Leaky faucets and drafty doors or windows increase your costs. The repairs are often simple and inexpensive.</li>
+<li>Replace your conventional incandescent light bulbs with LED or compact fluorescent bulbs. LED and compact fluorescent bulbs both last far longer and use less electricity than incandescent bulbs.</li>
+</ul>
+</div></div></div>
+<div class="wp-block-kadence-pane kt-accordion-pane kt-accordion-pane-3 kt-pane839_5f480d-c2"><div class="kt-accordion-header-wrap"><button class="kt-blocks-accordion-header kt-acccordion-button-label-show"><span class="kt-blocks-accordion-title-wrap"><span class="kt-blocks-accordion-title">Home and Cell Phone Service</span></span><span class="kt-blocks-accordion-icon-trigger"></span></button></div><div class="kt-accordion-panel kt-accordion-panel-hidden"><div class="kt-accordion-panel-inner">
+<ul>
+<li><span style="font-size: inherit;">Explore package deals, family plans, and unlimited talk/text/data plans.</span></li>
+<li>Consider what features you really need and will use.</li>
+<li>Ask questions. Make sure you understand all the features and fees.</li>
+<li>Read the contract before you sign—including the fine print.</li>
+<li>Keep track of your usage. Some companies let you review your account online or by phone.</li>
+<li>Pay your bill on time and in full. This will save on late fees. It’s also an important step in building and maintaining good credit.</li>
+<li>When you renew a service contract, ask if you’re eligible for a free phone upgrade or price discounts on new models.</li>
+<li>If you decide to cancel your service to reduce your costs, double check your contract regarding cancellation fees.</li>
+<li>If you use a prepaid phone, buy minutes in higher blocks to reduce the cost per minute.</li>
+</ul>
+</div></div></div>
+<div class="wp-block-kadence-pane kt-accordion-pane kt-accordion-pane-4 kt-pane839_545fbd-64"><div class="kt-accordion-header-wrap"><button class="kt-blocks-accordion-header kt-acccordion-button-label-show"><span class="kt-blocks-accordion-title-wrap"><span class="kt-blocks-accordion-title">Cable, Satellite and Streaming TV</span></span><span class="kt-blocks-accordion-icon-trigger"></span></button></div><div class="kt-accordion-panel kt-accordion-panel-hidden"><div class="kt-accordion-panel-inner">
+<ul>
+<li>Consider your needs for these services.</li>
+<li>Shop around. Compare what’s offered by different vendors.</li>
+<li>Explore low-cost providers and package deals, including package bundles available with phone services.</li>
+<li>Ask providers if you can get a discount by enrolling in “auto pay” or “paperless billing”.</li>
+</ul>
+</div></div></div>
+<div class="wp-block-kadence-pane kt-accordion-pane kt-accordion-pane-5 kt-pane839_874258-bf"><div class="kt-accordion-header-wrap"><button class="kt-blocks-accordion-header kt-acccordion-button-label-show"><span class="kt-blocks-accordion-title-wrap"><span class="kt-blocks-accordion-title">Managing Healthcare Costs</span></span><span class="kt-blocks-accordion-icon-trigger"></span></button></div><div class="kt-accordion-panel kt-accordion-panel-hidden"><div class="kt-accordion-panel-inner">
+<ul>
+<li>If you have health insurance, take advantage of your free annual check-ups to monitor and manage your health, preventively.</li>
+<li>If you have health insurance, save money by selecting in-network providers.</li>
+<li>If you don’t have health insurance, look for a nearby community health center. Many offer services on a sliding scale depending on your income.</li>
+<li>Let your physicians know that you are trying to save money on prescriptions.</li>
+<li>If you need a prescription, ask your physicians if they have any no-cost samples from pharmaceutical companies.</li>
+<li>Ask your physician and/or pharmacist if there is a lower-cost generic version of the prescribed drug.</li>
+<li>Explore mail order pharmacies. Many offer discounts on orders of three months or more.</li>
+</ul>
+</div></div></div>
+<div class="wp-block-kadence-pane kt-accordion-pane kt-accordion-pane-6 kt-pane839_859636-b9"><div class="kt-accordion-header-wrap"><button class="kt-blocks-accordion-header kt-acccordion-button-label-show"><span class="kt-blocks-accordion-title-wrap"><span class="kt-blocks-accordion-title">Tips for Travel and Entertainment</span></span><span class="kt-blocks-accordion-icon-trigger"></span></button></div><div class="kt-accordion-panel kt-accordion-panel-hidden"><div class="kt-accordion-panel-inner">
+<ul>
+<li>Airline ticket prices frequently fluctuate. Start pricing tickets at least 21 days in advance of your trip. Some airlines and travel Web sites offer special rates very near the flight date.</li>
+<li>Be flexible about the hours and days you will fly.</li>
+<li>Search your local newspaper and online for restaurant and entertainment coupons and other discounts.</li>
+<li>Save money on movies by going to bargain-priced shows. If allowed, bring your own snacks to the theater.</li>
+</ul>
+</div></div></div>
+<div class="wp-block-kadence-pane kt-accordion-pane kt-accordion-pane-7 kt-pane839_dbd8e7-33"><div class="kt-accordion-header-wrap"><button class="kt-blocks-accordion-header kt-acccordion-button-label-show"><span class="kt-blocks-accordion-title-wrap"><span class="kt-blocks-accordion-title">Get Creative</span></span><span class="kt-blocks-accordion-icon-trigger"></span></button></div><div class="kt-accordion-panel kt-accordion-panel-hidden"><div class="kt-accordion-panel-inner">
+<p>Think about ways you might be able to obtain something you want at a lower cost or even for free. For example:</p>
+<ul>
+<li>Take advantage of free events in your community, such as festivals, sporting events, concerts, theater, etc.</li>
+<li>You might be able to see a play or hear a concert by volunteering to usher.</li>
+<li>Get some friends together in order to qualify for a volume or group discount.</li>
+<li>Borrow books/videos/CDs from the library vs. buying them.</li>
+<li>Share a magazine subscription with a friend rather than buying single issues off the rack.</li>
+</ul>
+</div></div></div>
+</div></div></div>
+</div>
+</div>
+<div class="wp-block-kadence-spacer aligncenter kt-block-spacer-839_b738e7-c0"><div class="kt-block-spacer kt-block-spacer-halign-center"><hr class="kt-divider"/></div></div>
+<h2 class="wp-block-heading headline-indented has-kb-palette-12-color has-text-color" id="knowledge-check" style="font-size:22px;line-height:2.5">knowledge check</h2>
+<div id="watu_quiz" class="quiz-area ">
+<form action="" method="post" class="quiz-form " id="quiz-4" >
+<div class='watu-question' id='question-1'><div class='question-content'><p><span class='watu_num'>1. </span>Mr. Smith wants to pay for things in the right order so that her monthly income covers her needs.  Read Sergeant Smith’s thoughts and then select the best choice for him.</p>
+</div><input type='hidden' name='question_id[]' value='7' /><div class='watu-questions-wrap '><input type='hidden' name='answer_ids[]' class='watu-answer-ids' value='37' /><div class='watu-question-choice'><input type='radio' name='answer-7[]' id='answer-id-37' class='answer answer-1  answerof-7' value='37' />&nbsp;<label for='answer-id-37' id='answer-label-37' class=' answer label-1'><span class='answer'>The first thing I’ll do is set aside the money I need for everyday expenses, like parking fees or laundry.</span></label></div>
+<input type='hidden' name='answer_ids[]' class='watu-answer-ids' value='38' /><div class='watu-question-choice'><input type='radio' name='answer-7[]' id='answer-id-38' class='answer answer-1  answerof-7' value='38' />&nbsp;<label for='answer-id-38' id='answer-label-38' class=' answer label-1'><span class='answer'>I know I have some big expenses coming, so I’d better set that money aside first.</span></label></div>
+<input type='hidden' name='answer_ids[]' class='watu-answer-ids' value='39' /><div class='watu-question-choice'><input type='radio' name='answer-7[]' id='answer-id-39' class='answer answer-1  answerof-7' value='39' />&nbsp;<label for='answer-id-39' id='answer-label-39' class=' answer label-1'><span class='answer'>Before I do anything else, I’m going to pay my bills.</span></label></div>
+</div><input type='hidden' id='questionType1' value='radio' class=''></div><div style='display:none' id='question-2'><br /><div class='question-content'><img loading="lazy" decoding="async" src="https://handsonbanking.org/wp-content/plugins/watu/loading.gif" width="16" height="16" alt="Loading ..." title="Loading ..." />&nbsp;Loading &#8230;</div></div><br />
+	<p>Question <span id='numQ'>1</span> of 1</p>
+		<input type="button" id="next-question" value="Next &gt;"  />
+<input type="button" name="action" onclick="Watu.submitResult()" id="action-button" value="Submit"  class="watu-submit-button" />
+<input type="hidden" name="no_ajax" value="0"><input type="hidden" name="quiz_id" value="4" />
+<input type="hidden" id="watuStartTime" name="start_time" value="2025-07-24 10:26:14" />
+</form>
+</div>
+<div id="watu-loading-result" style="display:none;">
+	<p align="center"><img loading="lazy" decoding="async" src="https://handsonbanking.org/wp-content/plugins/watu/loading.gif" width="16" height="16" alt="Loading" title="Loading" /></p>
+</div>	
+<script type="text/javascript">
+var exam_id=0;
+var question_ids='';
+var watuURL='';
+jQuery(function($){
+question_ids = "7";
+exam_id = 4;
+Watu.exam_id = exam_id;
+Watu.qArr = question_ids.split(',');
+Watu.post_id = 839;
+Watu.singlePage = '0';
+Watu.hAppID = "0.54192200 1753352774";
+watuURL = "https://handsonbanking.org/wp-admin/admin-ajax.php";
+Watu.noAlertUnanswered = 0;
+});
+</script>
+<p></p>
+            </section>
+                                <section class="related-resources">
+        <div class="grid-container">
+            <div class="grid-margin-x grid-x">
+                <div class="cell small-12">
+                    <h2 class="headline-indented" id="related-heading">Related Resources</h2>
+                </div>
+            </div>
+                                            <div class="post-grid--resource alignfull" >
+        <div class="grid-container  " role="grid" >
+            <div id="related_post_grid" class="grid-x grid-padding-x align-top post-grid--resource__inner-wrapper post-grid" role="row">
+<div class="cell item" role="gridcell">
+    <div class=" card-vertical hob-blue " >
+        <a href="https://handsonbanking.org/resources/tips-for-dealing-with-debt/">
+                            <div class="card-image">
+                    <img width="1200" height="800" src="https://handsonbanking.org/wp-content/uploads/2020/05/iStock-1130220092_small.jpg" class="attachment-large size-large image-landscape  wp-post-image" alt="eraser erasing the word debt on paper" decoding="async" loading="lazy" />
+                </div>
+                        <header class="card-header ">
+                                                <h3 class=" post-title">Debt Warning Signs and Tips</h3>
+                <div class="entry-meta"><span class="entry-meta__label">Debt</span></div>            </header>
+            <div class="card-section">
+                                <span class="card-cta-text-link">View Resource<i class="icon-arrow-right" aria-hidden="true"></i></span>
+            </div>
+        </a>
+    </div>
+</div>
+<div class="cell item" role="gridcell">
+    <div class=" card-vertical hob-blue " >
+        <a href="https://handsonbanking.org/resources/money-management/">
+                            <div class="card-image">
+                    <img width="1200" height="797" src="https://handsonbanking.org/wp-content/uploads/2020/05/iStock-1088347250_small.jpg" class="attachment-large size-large image-landscape  wp-post-image" alt="man smiling doing bills" decoding="async" loading="lazy" />
+                </div>
+                        <header class="card-header ">
+                                                <h3 class=" post-title">Money Management</h3>
+                <div class="entry-meta"><span class="entry-meta__label">Money Management</span></div>            </header>
+            <div class="card-section">
+                                <span class="card-cta-text-link">View Resource<i class="icon-arrow-right" aria-hidden="true"></i></span>
+            </div>
+        </a>
+    </div>
+</div>
+<div class="cell item" role="gridcell">
+    <div class=" card-vertical hob-blue " >
+        <a href="https://handsonbanking.org/resources/credit-cards/">
+                            <div class="card-image">
+                    <img width="1199" height="800" src="https://handsonbanking.org/wp-content/uploads/2020/06/iStock-1159563594_small.jpg" class="attachment-large size-large image-landscape  wp-post-image" alt="older man in front of computer with credit card" decoding="async" loading="lazy" />
+                </div>
+                        <header class="card-header ">
+                                                <h3 class=" post-title">Credit Cards &#8211; Overview</h3>
+                <div class="entry-meta"><span class="entry-meta__label">Credit and Loans</span></div>            </header>
+            <div class="card-section">
+                                <span class="card-cta-text-link">View Resource<i class="icon-arrow-right" aria-hidden="true"></i></span>
+            </div>
+        </a>
+    </div>
+</div>
+                            </div>
+        </div>
+    </div>
+    <script>
+        var grid = document.querySelector('#related_post_grid');
+                    window.addEventListener('load', function () {
+                waterfall(grid);
+            });
+        window.addEventListener('resize', function () {
+            setTimeout(
+                waterfall(grid, 200)
+            );
+        });
+    </script>
+            </div>
+    </section>
+                    </article>
+        </main>
+    </div>
+            <div class="site-sub-footer hide-for-print">
+    <div class="grid-container">
+        <div class="grid-x grid-margin-x">
+            <div class="cell align-center">
+                                    <a href="#modal_glossary">
+                        <i class="icon-cap-and-book"></i>
+                        Glossary
+                    </a>
+                                    <a href="#modal_calculator">
+                        <i class="icon-calculator"></i>
+                        Calculator
+                    </a>
+                                    <a href="https://handsonbanking.org/sitemap/">
+                        <i class="icon-compass"></i>
+                        Sitemap
+                    </a>
+                                    <a href="https://handsonbanking.org/feedback/">
+                        <i class="icon-people-talking"></i>
+                        User Feedback
+                    </a>
+                            </div>
+        </div>
+    </div>
+</div>
+<footer class="site-footer hide-for-print" >
+    <div class="grid-container">
+        <nav class="grid-x">
+            <div class="cell medium-3 large-3">
+                <h2 class="headline-indented" id="nav-list-quick-links">Quick Links</h2>
+<div class="nav-footer-first">
+            <ul class="menu"  aria-labelledby="nav-list-quick-links">
+                                    <li class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-139">
+                    <a class="nav-main-link" href="https://handsonbanking.org/sitemap/">Sitemap</a>
+                </li>
+                            <li class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-140">
+                    <a class="nav-main-link" href="mailto:hobinfo@wellsfargo.com">Email Us</a>
+                </li>
+                            <li class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-141">
+                    <a class="nav-main-link" href="https://handsonbanking.org/about-us/">About Us</a>
+                </li>
+                        </ul>
+</div>
+            </div>
+            <div class="cell medium-3 large-3">
+                <h2 class="headline-indented" id="nav-list-categories">Categories</h2>
+<div class="nav-footer-second">
+            <ul class="menu"  aria-labelledby="nav-list-categories">
+                                    <li class=" menu-item menu-item-type-post_type menu-item-object-hob_category menu-item-1889">
+                    <a class="nav-main-link" href="https://handsonbanking.org/categories/getting-started/">Getting Started</a>
+                </li>
+                            <li class=" menu-item menu-item-type-post_type menu-item-object-hob_category menu-item-1887">
+                    <a class="nav-main-link" href="https://handsonbanking.org/categories/managing-day-to-day/">Managing Day-To-Day</a>
+                </li>
+                            <li class=" menu-item menu-item-type-post_type menu-item-object-hob_category menu-item-1888">
+                    <a class="nav-main-link" href="https://handsonbanking.org/categories/preparing-for-a-rainy-day/">Preparing for a Rainy Day</a>
+                </li>
+                            <li class=" menu-item menu-item-type-post_type menu-item-object-hob_category menu-item-1886">
+                    <a class="nav-main-link" href="https://handsonbanking.org/categories/preparing-for-tomorrow/">Preparing for Tomorrow</a>
+                </li>
+                            <li class=" menu-item menu-item-type-post_type menu-item-object-hob_category menu-item-1885">
+                    <a class="nav-main-link" href="https://handsonbanking.org/categories/planning-for-the-future/">Preparing for the Future</a>
+                </li>
+                        </ul>
+</div>
+            </div>
+            <div class="cell medium-3 large-3">
+                <h2 class="headline-indented" id="nav-list-legal">Legal</h2>
+<div class="nav-footer-third">
+            <ul class="menu"  aria-labelledby="nav-list-legal">
+                                    <li class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-147">
+                    <a class="nav-main-link" href="https://handsonbanking.org/terms-conditions/">Terms of Use</a>
+                </li>
+                            <li class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-148">
+                    <a class="nav-main-link" href="https://handsonbanking.org/legal/">Legal Information</a>
+                </li>
+                            <li class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-privacy-policy menu-item-150">
+                    <a class="nav-main-link" href="https://handsonbanking.org/privacy-policy/">Privacy Statement</a>
+                </li>
+                            <li class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-151">
+                    <a class="nav-main-link" href="https://www.wellsfargo.com/privacy-security/california-consumer-privacy-notice">California Consumer Privacy Act Notice</a>
+                </li>
+                            <li class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-4833">
+                    <a class="nav-main-link" href="https://www.wellsfargo.com/privacy-security/notice-of-data-collection/">Notice of Data Collection</a>
+                </li>
+                            <li class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-8018">
+                    <a class="nav-main-link" href="https://www.wellsfargo.com/privacy-security/opt-out-notice/">Do Not Sell or Share My Personal Information</a>
+                </li>
+                        </ul>
+</div>
+            </div>
+            <div class="cell medium-3 large-3 site-footer-branding-column">
+                <span class="brand">
+                                            <img src="https://handsonbanking.org/wp-content/uploads/2020/04/wf_logo_2020-222x0-c-default.png" alt="A public service provided by Wells Fargo logo">
+                                    </span>
+            </div>
+        </nav>
+        <div class="grid-x">
+            <div class="cell small-12 site-footer-copyright">
+                &copy; 2025 Wells Fargo Bank NA. All rights reserved.
+            </div>
+        </div>
+    </div>
+</footer>
+<script type="text/javascript">
+var _paq = window._paq = window._paq || [];
+_paq.push(['trackPageView']);_paq.push(['enableLinkTracking']);_paq.push(['alwaysUseSendBeacon']);_paq.push(['setTrackerUrl', "\/\/handsonbanking.org\/wp-content\/plugins\/matomo\/app\/matomo.php"]);_paq.push(['setSiteId', '1']);var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+g.type='text/javascript'; g.async=true; g.src="\/\/handsonbanking.org\/wp-content\/uploads\/matomo\/matomo.js"; s.parentNode.insertBefore(g,s);
+</script>
+<link rel='stylesheet' id='watu-style-css' href='https://handsonbanking.org/wp-content/plugins/watu/style.css?ver=2.3.8' type='text/css' media='all' />
+<style id='core-block-supports-inline-css' type='text/css'>
+.wp-container-core-columns-layout-1.wp-container-core-columns-layout-1{flex-wrap:nowrap;}.wp-container-core-columns-layout-2.wp-container-core-columns-layout-2{flex-wrap:nowrap;}
+</style>
+<script type="text/javascript" src="https://handsonbanking.org/wp-content/plugins/kadence-blocks/includes/assets/js/kt-accordion.min.js?ver=3.2.23" id="kadence-blocks-accordion-js"></script>
+<script type="text/javascript" src="https://handsonbanking.org/wp-content/plugins/kadence-blocks/includes/assets/js/kt-tabs.min.js?ver=3.2.23" id="kadence-blocks-tabs-js"></script>
+<script type="text/javascript" src="https://handsonbanking.org/wp-content/themes/hob-2020/dist/index.js?ver=1.0.0" id="style-theme-main-js"></script>
+<script type="text/javascript" src="https://handsonbanking.org/wp-content/themes/hob-2020/src/lib/waterfall/waterfall.min.js?ver=6.4.3" id="masonry_layout-js"></script>
+<script type="text/javascript" id="watu-script-js-extra">
+/* <![CDATA[ */
+var watu_i18n = {"missed_required_question":"You have missed to answer a required question","nothing_selected":"You did not select any answer. Are you sure you want to continue?","show_answer":"Show Answer","complete_text_captcha":"You need to answer the verification question","try_again":"Try again","email_required":"Valid email address is required.","next_q":"Next >","please_wait":"Please wait...","ajax_url":"https:\/\/handsonbanking.org\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://handsonbanking.org/wp-content/plugins/watu/script.js?ver=2.4.4" id="watu-script-js"></script>
+        </div>
+    <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"NRJS-763fce7e1bea316e18e","applicationID":"398129110","transactionName":"YAdVN0QFWRcDBkQPXllNdgBCDVgKTRZZCFZbBxoRUxdYERAGVQ==","queueTime":0,"applicationTime":1252,"atts":"TEBWQQwfShk=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>
