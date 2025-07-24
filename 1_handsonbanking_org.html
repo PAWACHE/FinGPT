@@ -611,16 +611,17 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
                             <div class="cell medium-8 medium-offset-2">
                                 <div itemscope itemtype="http://schema.org/WebSite">
     <link itemprop="url" href="https://handsonbanking.org/"/>
-    <form role="search" method="get" id="searchform-9977003" action="https://handsonbanking.org/" itemprop="potentialAction" itemscope
-          itemtype="http://schema.org/SearchAction">
-        <meta itemprop="target" content="https://handsonbanking.org/?s={s}"/>
-        <label class="site-search-label" for="s-9977003">Search</label>
-        <div class="form-overlap-submit">
-            <input type="text" itemprop="query-input" class="search-input" value=""
-                   name="s" id="s-9977003" placeholder="Search">
-            <input type="submit" class="search-submit button" id="searchsubmit-9977003" value="Search">
-        </div>
-    </form>
+    <form role="search" method="get" id="searchform-9977083" action="https://handsonbanking.org/">
+  <label class="screen-reader-text" for="s">Search</label>
+  <div class="form-overlap submit" style="display: flex; align-items: center; gap: 8px;">
+    <input type="text" name="s" id="s" placeholder="Search" class="search-input" />
+    <button type="button" onclick="startSpeechRecognition()" style="padding: 10px; background: none; border: none; cursor: pointer;">
+      🎤
+    </button>
+    <input type="submit" value="Search" class="search-submit button" id="searchsubmit-9977083" />
+  </div>
+</form>
+
 </div>
                             </div>
                         </div>
@@ -1268,8 +1269,23 @@ g.type='text/javascript'; g.async=true; g.src="\/\/handsonbanking.org\/wp-conten
 <script type="text/javascript" src="https://handsonbanking.org/wp-content/themes/hob-2020/src/lib/waterfall/waterfall.min.js?ver=6.4.3" id="masonry_layout-js"></script>
         </div>
     <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"NRJS-763fce7e1bea316e18e","applicationID":"398129110","transactionName":"YAdVN0QFWRcDBkQPXllNdgBCDVgKTRFVC0FbA0MGGwxYCQcVUQFU","queueTime":0,"applicationTime":1117,"atts":"TEBWQQwfShk=","errorBeacon":"bam.nr-data.net","agent":""}</script>
-    <script>
+    
+<script>
+  function startSpeechRecognition() {
+    const speechConfig = SpeechSDK.SpeechConfig.fromSubscription("AGrfdWBF05qjSwLuZEncY3xcdRsFOem32IIZ3lm9Y86Xm09qqIuzJQQJ99BGACYeBjFXJ3w3AAAYACOGpk4N", "eastus"); // e.g., "eastus"
+    speechConfig.speechRecognitionLanguage = "en-IN";
 
+    const audioConfig = SpeechSDK.AudioConfig.fromDefaultMicrophoneInput();
+    const recognizer = new SpeechSDK.SpeechRecognizer(speechConfig, audioConfig);
+
+    recognizer.recognizeOnceAsync(result => {
+      document.getElementById("s").value = result.text;
+    });
+  }
+</script>
+
+    
+    <script>
         function startTextToSpeech() {
     const speechConfig = SpeechSDK.SpeechConfig.fromSubscription("6OKAArG3RJE24MMT2PSXFS2LI3pMcX0SlmOFdPvqjxWlW6K1rJ6GJQQJ99BGACGhslBXJ3w3AAAYACOGA6ui", "centralindia");
     speechConfig.speechSynthesisLanguage = "en-IN";  // You can change to "hi-IN", etc.
