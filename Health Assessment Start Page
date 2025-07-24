@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Financial Health Checkup</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+      </head>
+      
+<body class="bg-gray-50 font-sans">
+  <!-- Navbar -->
+  <header class="bg-white shadow p-4 flex justify-between">
+    <h1 class="text-blue-600 text-xl font-bold">FinanceCheck</h1>
+    <a href="/assessment" class="text-blue-600 font-medium hover:underline">Start Checkup</a>
+  </header>
+
+  <!-- Hero -->
+  <section class="text-center py-20 bg-blue-100">
+    <h2 class="text-4xl font-bold">Is Your Money Working for You?</h2>
+    <p class="mt-4 text-lg">Answer a few simple questions and get an instant financial wellness rating.</p>
+    <a href="assessment.html" class="mt-6 inline-block bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700">
+      Start Your Free Assessment
+    </a>
+
+  </section>
+
+  <!-- Features -->
+  <section class="py-16 px-4 max-w-4xl mx-auto grid md:grid-cols-3 gap-8 text-center">
+    <div class="bg-white p-6 rounded shadow">📊 Personalized Score</div>
+    <div class="bg-white p-6 rounded shadow">💡 Smart Money Tips</div>
+    <div class="bg-white p-6 rounded shadow">✅ Quick & Confidential</div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-white py-6 text-center text-sm text-gray-600">
+    &copy; 2025 FinanceCheck. All rights reserved.
+  </footer>
+</body>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#1d4ed8',
+            secondary: '#f1f5f9',
+          }
+        }
+      }
+    }
+  </script>
+  
+</html>
+    
